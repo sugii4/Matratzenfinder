@@ -1,0 +1,13 @@
+.matratzenfinder h1 {
+    text-align: center;
+}
+
+.altersgruppe {
+    display: flex;
+}
+
+.altersgruppe div {
+    background-color: yellow;
+    height: 20%;
+    width: 20%;
+}

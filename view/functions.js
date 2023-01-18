@@ -12,9 +12,9 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
+    document.getElementById("nextBtn").innerHTML = "Fertig";
   } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("nextBtn").innerHTML = "Weiter";
   }
   //... and run a function that will display the correct step indicator:
   fixStepIndicator(n)
@@ -32,7 +32,7 @@ function nextPrev(n) {
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
     // ... the form gets submitted:
-    document.getElementById("regForm").submit();
+    document.getElementById("formIndex").submit();
     return false;
   }
   // Otherwise, display the correct tab:
@@ -45,13 +45,14 @@ function validateForm() {
   x = document.getElementsByClassName("tab");
   y = x[currentTab].getElementsByTagName("input");
   // A loop that checks every input field in the current tab:
-  for (i = 0; i < y.length; i++) {
+  for (i = 0, l=y.length; i<l; i++) {
     // If a field is empty...
-    if (y[i].value == "") {
+    if (!y[i].checked) {
       // add an "invalid" class to the field:
-      y[i].className += " invalid";
+      y[i].className += "invalid";
       // and set the current valid status to false
       valid = false;
+      break;
     }
   }
   // If the valid status is true, mark the step as finished and valid:

@@ -11,52 +11,54 @@
       <form id="formIndex" action="">
          <div class="tab">
             <h1>Zielgruppe:</h1>
-            <p><input type="checkbox" oninput="this.className = ''">Erwachsene</p>
-            <p><input type="checkbox" oninput="this.className = ''">Kinder</p>
+            <p><input type="radio" name="zg" data-value="1" oninput="this.className = ''">Erwachsene</p>
+            <p><input type="radio" name="zg" data-value="2" oninput="this.className = ''">Kinder</p>
         </div>
 
         <div class="tab">
             <h1>Härtegrad:</h1>
-            <p><input type="checkbox" oninput="this.className = ''">H1</p>
-            <p><input type="checkbox" oninput="this.className = ''">H2</p>
-            <p><input type="checkbox" oninput="this.className = ''">H3</p>
-            <p><input type="checkbox" oninput="this.className = ''">H4</p>
+            <p><input type="radio" name="hg" data-value="H1" oninput="this.className = ''">H1</p>
+            <p><input type="radio" name="hg" data-value="H2" oninput="this.className = ''">H2</p>
+            <p><input type="radio" name="hg" data-value="H3" oninput="this.className = ''">H3</p>
+            <p><input type="radio" name="hg" data-value="H4" oninput="this.className = ''">H4</p>
         </div>
 
         <div class="tab">
             <h1>Matratzengröße:</h1>
-            <p><input type="checkbox" oninput="this.className = ''">80x200</p>
-            <p><input type="checkbox" oninput="this.className = ''">90x200</p>
-            <p><input type="checkbox" oninput="this.className = ''">100x200</p>
-            <p><input type="checkbox" oninput="this.className = ''">120x200</p>
-            <p><input type="checkbox" oninput="this.className = ''">140x200</p>
-            <p><input type="checkbox" oninput="this.className = ''">160x200</p>
-            <p><input type="checkbox" oninput="this.className = ''">180x200</p>
-            <p><input type="checkbox" oninput="this.className = ''">200x200</p>
+            <p><input type="radio" name="mg" data-value="9" data-size="2" oninput="this.className = ''">60x120</p>
+            <p><input type="radio" name="mg" data-value="10" data-size="2" oninput="this.className = ''">70x140</p>
+            <p><input type="radio" name="mg" data-value="1" data-size="1,2" oninput="this.className = ''">80x200</p>
+            <p><input type="radio" name="mg" data-value="2" data-size="1,2" oninput="this.className = ''">90x200</p>
+            <p><input type="radio" name="mg" data-value="3" data-size="1,2" oninput="this.className = ''">100x200</p>
+            <p><input type="radio" name="mg" data-value="4" data-size="1,2" oninput="this.className = ''">120x200</p>
+            <p><input type="radio" name="mg" data-value="5" data-size="1,2" oninput="this.className = ''">140x200</p>
+            <p><input type="radio" name="mg" data-value="6" data-size="1,2" oninput="this.className = ''">160x200</p>
+            <p><input type="radio" name="mg" data-value="7" data-size="1,2" oninput="this.className = ''">180x200</p>
+            <p><input type="radio" name="mg" data-value="8" data-size="1,2" oninput="this.className = ''">200x200</p>
         </div>
 
         <div class="tab">
             <h1>Material:</h1>
-            <p><input type="checkbox" oninput="this.className = ''">Kaltschaum</p>
-            <p><input type="checkbox" oninput="this.className = ''">Federkern</p>
-            <p><input type="checkbox" oninput="this.className = ''">Latex</p>
-            <p><input type="checkbox" oninput="this.className = ''">Naturlatex</p>
-            <p><input type="checkbox" oninput="this.className = ''">Viskose</p>
-            <p><input type="checkbox" oninput="this.className = ''">Komfortschaum</p>
+            <p><input type="radio" name="m" data-value="1" oninput="this.className = ''">Kaltschaum</p>
+            <p><input type="radio" name="m" data-value="2" oninput="this.className = ''">Federkern</p>
+            <p><input type="radio" name="m" data-value="3" oninput="this.className = ''">Latex</p>
+            <p><input type="radio" name="m" data-value="4" oninput="this.className = ''">Naturlatex</p>
+            <p><input type="radio" name="m" data-value="5" oninput="this.className = ''">Viskose</p>
+            <p><input type="radio" name="m" data-value="6" oninput="this.className = ''">Komfortschaum</p>
         </div>
 
         <div class="tab">
             <h1>Allergie:</h1>
-            <p><input type="checkbox" oninput="this.className = ''">Latex</p>
-            <p><input type="checkbox" oninput="this.className = ''">Milben</p>
-            <p><input type="checkbox" oninput="this.className = ''">Tierhaar</p>
+            <p><input type="checkbox" name="ag" data-value="1" oninput="this.className = ''">Latex</p>
+            <p><input type="checkbox" name="ag" data-value="2" oninput="this.className = ''">Milben</p>
+            <p><input type="checkbox" name="ag" data-value="3" oninput="this.className = ''">Tierhaar</p>
         </div>
 
         <div class="tab">
             <h1>Beschwerden:</h1>
-            <p><input type="checkbox" oninput="this.className = ''">Schultern/Nacken</p>
-            <p><input type="checkbox" oninput="this.className = ''">Unterer Rücken</p>
-            <p><input type="checkbox" oninput="this.className = ''">Ganzer Rücken</p>
+            <p><input type="checkbox" name="b" data-value="2" oninput="this.className = ''">Schultern/Nacken</p>
+            <p><input type="checkbox" name="b" data-value="3" oninput="this.className = ''">Unterer Rücken</p>
+            <p><input type="checkbox" name="b" data-value="1" oninput="this.className = ''">Ganzer Rücken</p>
         </div>
 
         <div style="overflow:auto">

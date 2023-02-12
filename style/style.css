@@ -28,10 +28,6 @@ input {
     border: 1px solid #aaaaaa;
 }
 
-input.invalid {
-    color: #ce5a5a;
-}
-
 .tab {
     display: none;
 }

@@ -131,5 +131,23 @@ async function formSubmit() {
   const response = await fetch('controller.php',{method:'POST',body:data})
   const json = await response.json()
 
-  console.log(json)
+  document.querySelector('form').remove()
+if(json.length === 0) {
+  let c = document.createElement('p')
+  c.innerText = "sorry nix gefunden! loser"
+  document.body.appendChild(c)
+} else {
+  json.forEach(e=>{
+
+    price = new Intl.NumberFormat('de-DE', {
+    style: 'currency',
+    currency: 'EUR'
+    }).format(e.price)
+
+    let b = document.createElement('div')
+    b.innerHTML = `${e.name}<br>${price}<br><img src="${e.picture}"><br><a target="_blank" href="${e.url}">${e.url}</a>`
+    document.querySelector('.results').appendChild(b)
+  })
+} 
+  
 }

@@ -32,7 +32,7 @@ INNER JOIN allergy_mattress am ON am.ma_id=m.ma_id
 INNER JOIN complaints_mattress cm ON cm.ma_id=m.ma_id
 WHERE group_fk = {$target} AND hg.h_id = '{$hardness}' AND sm.s_id = {$size} AND m.material_fk = {$material} {$selectAllergy} {$selectComplaints} LIMIT 4;
 SQL;
-
+echo($sql);
 $b = $a->query($sql)->fetch_all(MYSQLI_ASSOC);
 echo json_encode($b);
 

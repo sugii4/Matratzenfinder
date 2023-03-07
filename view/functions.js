@@ -105,7 +105,7 @@ async function formSubmit() {
   formdata.set('size', document.querySelectorAll('[type=radio][name=size]:checked')[0].dataset.value)
   formdata.set('material', document.querySelectorAll('[type=radio][name=material]:checked')[0].dataset.value)
 
-  const allergies = document.querySelectorAll('[type=checkbox][name=ag]:checked')
+  const allergies = document.querySelectorAll('[type=checkbox][name=allergy]:checked')
   if (allergies.length === 0) {
     formdata.append('allergy[]', '')
   } else {
@@ -114,7 +114,7 @@ async function formSubmit() {
     })
   }
 
-  const beschwerden = document.querySelectorAll('[type=checkbox][name=b]:checked')
+  const beschwerden = document.querySelectorAll('[type=checkbox][name=complaints]:checked')
   if (beschwerden.length === 0) {
     formdata.append('complaints[]', '')
   } else {
@@ -145,7 +145,7 @@ if(json.length === 0) {
     }).format(e.price)
 
     let ausgabe = document.createElement('div')
-    b.innerHTML = `${e.name}<br>${price}<br><img src="${e.picture}"><br><a target="_blank" href="${e.url}">${e.url}</a>`
+    ausgabe.innerHTML = `${e.name}<br>${price}<br><img src="${e.picture}"><br><a target="_blank" href="${e.url}">${e.url}</a>`
     document.querySelector('.results').appendChild(ausgabe)
   })
 } 

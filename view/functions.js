@@ -43,7 +43,7 @@ function nextPrev(n) {
     const sizes = document.querySelectorAll('[data-size]');
     sizes.forEach(s=>{
       s.removeAttribute('disabled')
-      if (document.querySelectorAll('[type=radio][name=zg]:checked')[0].dataset.value === '1' && s.dataset.size === '2') {
+      if (document.querySelectorAll('[type=radio][name=target]:checked')[0].dataset.value === '1' && s.dataset.size === '2') {
         s.setAttribute('disabled','')
       }
     })
@@ -100,26 +100,26 @@ function checkRadio(radios) {
 
 async function formSubmit() {
   const formdata = new FormData()
-  formdata.set('zg', document.querySelectorAll('[type=radio][name=zg]:checked')[0].dataset.value)
-  formdata.set('hg', document.querySelectorAll('[type=radio][name=hg]:checked')[0].dataset.value)
-  formdata.set('mg', document.querySelectorAll('[type=radio][name=mg]:checked')[0].dataset.value)
-  formdata.set('m', document.querySelectorAll('[type=radio][name=m]:checked')[0].dataset.value)
+  formdata.set('target', document.querySelectorAll('[type=radio][name=target]:checked')[0].dataset.value)
+  formdata.set('hardness', document.querySelectorAll('[type=radio][name=hardness]:checked')[0].dataset.value)
+  formdata.set('size', document.querySelectorAll('[type=radio][name=size]:checked')[0].dataset.value)
+  formdata.set('material', document.querySelectorAll('[type=radio][name=material]:checked')[0].dataset.value)
 
   const allergies = document.querySelectorAll('[type=checkbox][name=ag]:checked')
   if (allergies.length === 0) {
-    formdata.append('ag[]', '')
+    formdata.append('allergy[]', '')
   } else {
     allergies.forEach(a=>{
-      formdata.append('ag[]', a.dataset.value)
+      formdata.append('allergy[]', a.dataset.value)
     })
   }
 
   const beschwerden = document.querySelectorAll('[type=checkbox][name=b]:checked')
   if (beschwerden.length === 0) {
-    formdata.append('b[]', '')
+    formdata.append('complaints[]', '')
   } else {
     beschwerden.forEach(a=>{
-      formdata.append('b[]', a.dataset.value)
+      formdata.append('complaints[]', a.dataset.value)
     })
   }
 
@@ -144,9 +144,9 @@ if(json.length === 0) {
     currency: 'EUR'
     }).format(e.price)
 
-    let b = document.createElement('div')
+    let ausgabe = document.createElement('div')
     b.innerHTML = `${e.name}<br>${price}<br><img src="${e.picture}"><br><a target="_blank" href="${e.url}">${e.url}</a>`
-    document.querySelector('.results').appendChild(b)
+    document.querySelector('.results').appendChild(ausgabe)
   })
 } 
   

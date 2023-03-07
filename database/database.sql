@@ -176,13 +176,13 @@ VALUES (18, 3);
 /* härtegrade hinzufügen */
 
 INSERT INTO haertegrade_mattress(ma_id, h_id)
-VALUES (20, "H1");
+VALUES (11, "H1");
 
 INSERT INTO haertegrade_mattress(ma_id, h_id)
 VALUES (20, "H2");
 
 INSERT INTO haertegrade_mattress(ma_id, h_id)
-VALUES (20, "H3");
+VALUES (11, "H3");
 
 INSERT INTO haertegrade_mattress(ma_id, h_id)
 VALUES (20, "H4");

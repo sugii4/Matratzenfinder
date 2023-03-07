@@ -3,17 +3,17 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST'){
     exit();
 }
 
-$zg = $_POST['zg'];
-$hg = $_POST['hg'];
-$mg = $_POST['mg'];
-$m  = $_POST['m'];
-$ag = $_POST['ag'];
-$b  = $_POST['b'];
+$target = $_POST['target'];
+$hardness = $_POST['hardness'];
+$size = $_POST['size'];
+$material  = $_POST['material'];
+$allergy = $_POST['allergy'];
+$complaints  = $_POST['complaints'];
 
 $a = mysqli_connect('localhost', 'root', '', 'matratzenfinder');
 
-$asdf = implode(',',$ag);
-$asdfe = implode(',',$b);
+$selectAllergy = implode(',',$allergy);
+$selectComplaints = implode(',',$complaints);
 
 $sql = <<<SQL
 SELECT DISTINCT(m.ma_id),m.mattress AS `name`,m.price,m.url,m.picture
@@ -22,7 +22,7 @@ INNER JOIN haertegrade_mattress hg ON m.ma_id=hg.ma_id
 INNER JOIN size_mattress sm ON m.ma_id=sm.ma_id
 INNER JOIN allergy_mattress am ON am.ma_id=m.ma_id
 INNER JOIN complaints_mattress cm ON cm.ma_id=m.ma_id
-WHERE group_fk = {$zg} AND hg.h_id = '{$hg}' AND sm.s_id = {$mg} AND m.material_fk = {$m} AND am.a_id in ({$asdf}) AND cm.c_id in ({$asdfe}) LIMIT 4;
+WHERE group_fk = {$target} AND hg.h_id = '{$hardness}' AND sm.s_id = {$size} AND m.material_fk = {$material} AND am.a_id in ({$selectAllergy}) AND cm.c_id in ({$selectComplaints}) LIMIT 4;
 SQL;
 
 $b = $a->query($sql)->fetch_all(MYSQLI_ASSOC);

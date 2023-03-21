@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 11. Jan 2023 um 13:45
--- Server-Version: 10.4.24-MariaDB
--- PHP-Version: 8.1.6
+-- Erstellungszeit: 21. Mrz 2023 um 11:25
+-- Server-Version: 10.4.27-MariaDB
+-- PHP-Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `allergy` (
   `a_id` int(11) NOT NULL,
   `allergy_type` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `allergy`
@@ -51,7 +51,7 @@ CREATE TABLE `allergy_mattress` (
   `am_id` int(11) NOT NULL,
   `ma_id` int(11) NOT NULL,
   `a_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `allergy_mattress`
@@ -83,30 +83,29 @@ INSERT INTO `allergy_mattress` (`am_id`, `ma_id`, `a_id`) VALUES
 (23, 10, 2),
 (24, 10, 3),
 (25, 11, 2),
-(26, 11, 3),
-(27, 12, 1),
-(28, 12, 2),
-(29, 12, 3),
-(30, 13, 1),
-(31, 13, 2),
-(32, 13, 3),
-(33, 14, 2),
-(34, 14, 3),
-(35, 15, 2),
-(36, 15, 3),
-(37, 16, 1),
-(38, 16, 2),
-(39, 16, 3),
-(40, 17, 2),
-(41, 17, 3),
-(42, 18, 2),
-(43, 18, 3),
-(44, 19, 1),
-(45, 19, 2),
-(46, 19, 3),
-(47, 20, 1),
-(48, 20, 2),
-(49, 20, 3);
+(26, 12, 1),
+(27, 12, 2),
+(28, 12, 3),
+(29, 13, 1),
+(30, 13, 2),
+(31, 13, 3),
+(32, 14, 2),
+(33, 14, 3),
+(34, 15, 2),
+(35, 15, 3),
+(36, 16, 1),
+(37, 16, 2),
+(38, 16, 3),
+(39, 17, 2),
+(40, 17, 3),
+(41, 18, 2),
+(42, 18, 3),
+(43, 19, 1),
+(44, 19, 2),
+(45, 19, 3),
+(46, 20, 1),
+(47, 20, 2),
+(48, 20, 3);
 
 -- --------------------------------------------------------
 
@@ -117,7 +116,7 @@ INSERT INTO `allergy_mattress` (`am_id`, `ma_id`, `a_id`) VALUES
 CREATE TABLE `complaints` (
   `c_id` int(11) NOT NULL,
   `complaints` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `complaints`
@@ -138,7 +137,7 @@ CREATE TABLE `complaints_mattress` (
   `cm_id` int(11) NOT NULL,
   `ma_id` int(11) NOT NULL,
   `c_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `complaints_mattress`
@@ -182,7 +181,7 @@ INSERT INTO `complaints_mattress` (`cm_id`, `ma_id`, `c_id`) VALUES
 CREATE TABLE `groups` (
   `g_id` int(11) NOT NULL,
   `groups_name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `groups`
@@ -201,7 +200,7 @@ INSERT INTO `groups` (`g_id`, `groups_name`) VALUES
 CREATE TABLE `haertegrade` (
   `h_id` varchar(50) NOT NULL,
   `haertegrad` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `haertegrade`
@@ -223,7 +222,7 @@ CREATE TABLE `haertegrade_mattress` (
   `hm_id` int(11) NOT NULL,
   `ma_id` int(11) NOT NULL,
   `h_id` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `haertegrade_mattress`
@@ -255,7 +254,7 @@ INSERT INTO `haertegrade_mattress` (`hm_id`, `ma_id`, `h_id`) VALUES
 (24, 8, 'H3'),
 (25, 9, 'H2'),
 (26, 9, 'H3'),
-(27, 10, 'H2'),
+(27, 10, 'H3'),
 (28, 11, 'H2'),
 (29, 12, 'H2'),
 (31, 13, 'H2'),
@@ -278,7 +277,9 @@ INSERT INTO `haertegrade_mattress` (`hm_id`, `ma_id`, `h_id`) VALUES
 (48, 19, 'H3'),
 (49, 20, 'H1'),
 (50, 20, 'H2'),
-(51, 20, 'H3');
+(51, 20, 'H3'),
+(52, 11, 'H1'),
+(53, 11, 'H3');
 
 -- --------------------------------------------------------
 
@@ -289,7 +290,7 @@ INSERT INTO `haertegrade_mattress` (`hm_id`, `ma_id`, `h_id`) VALUES
 CREATE TABLE `material` (
   `m_id` int(11) NOT NULL,
   `material` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `material`
@@ -314,34 +315,36 @@ CREATE TABLE `mattress` (
   `mattress` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
   `group_fk` int(11) NOT NULL,
-  `material_fk` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `material_fk` int(11) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `picture` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `mattress`
 --
 
-INSERT INTO `mattress` (`ma_id`, `mattress`, `price`, `group_fk`, `material_fk`) VALUES
-(1, 'Werkmeister M T610 Taschenfederkernmatratze', 949, 1, 2),
-(2, 'Werkmeister M S70 Plus Kaltschaummatratze', 1149, 1, 1),
-(3, 'Werkmeister M S55 Flexo Kaltschaummatratze', 879, 1, 1),
-(4, 'Werkmeister M T631L Taschenfederkernmatratze', 1339, 1, 2),
-(5, 'Werkmeister M S55 Komfort Kaltschaummatratze', 1129, 1, 1),
-(6, 'Werkmeister M S70 Plus WS Kaltschaummatratze', 1149, 1, 1),
-(7, 'dormiente Naturlatexmatratze Natural Eco Plus', 785, 1, 4),
-(8, 'dormiente Naturlatexmatratze Natural Basic 3', 995, 1, 4),
-(9, 'dormiente Naturlatexmatratze Natural Basic 4', 995, 1, 4),
-(10, 'dormiente Naturmatratze Natur Pur Classic Hanf', 1571, 1, 4),
-(11, 'dormiente Naturmatratze Natur Pur Deluxe Seegras', 2095, 1, 4),
-(12, 'selecta K2 Kindermatratze', 399, 2, 6),
-(13, 'Werkmeister YoungStar Kindermatratze', 449, 2, 6),
-(14, 'Baumberger Vario Kindermatratze', 249, 2, 4),
-(15, 'Prolana Kindermatratze Nele Plus', 699, 2, 4),
-(16, 'Werkmeister M S55 Plus Kaltschaummatratze', 999, 1, 1),
-(17, 'Werkmeister M L430 Latexmatratze', 1499, 1, 3),
-(18, 'selecta L4 Latexmatratze', 699, 1, 3),
-(19, 'selecta V6 Visco-Matratze', 799, 1, 5),
-(20, 'Dermapur Feeling 21 Visco-Matratze', 1098, 1, 5);
+INSERT INTO `mattress` (`ma_id`, `mattress`, `price`, `group_fk`, `material_fk`, `url`, `picture`) VALUES
+(1, 'Werkmeister M T610 Taschenfederkernmatratze', 949, 1, 2, 'https://www.belama.de/werkmeister-m-t610/', 'https://www.belama.de/media/image/product/353/md/werkmeister-m-t610-.jpg'),
+(2, 'Werkmeister M S70 Plus Kaltschaummatratze', 1149, 1, 1, 'https://www.belama.de/werkmeister-m-s70-plus/', 'https://www.belama.de/media/image/product/349/md/werkmeister-m-s70-plus-.jpg'),
+(3, 'Werkmeister M S55 Flexo Kaltschaummatratze', 879, 1, 1, 'https://www.belama.de/werkmeister-m-s55-flexo/', 'https://www.belama.de/media/image/product/341/md/werkmeister-m-s55-flexo-.jpg'),
+(4, 'Werkmeister M T631L Taschenfederkernmatratze', 1339, 1, 2, 'https://www.belama.de/werkmeister-taschenfederkernmatratze-mt631l/', 'https://www.belama.de/media/image/product/1138/md/werkmeister-taschenfederkernmatratze-mt631l-.jpg'),
+(5, 'Werkmeister M S55 Komfort Kaltschaummatratze', 1129, 1, 1, 'https://www.belama.de/werkmeister-m-s55-komfort/', 'https://www.belama.de/media/image/product/342/md/werkmeister-m-s55-komfort-.jpg'),
+(6, 'Werkmeister M S70 Plus WS Kaltschaummatratze', 1149, 1, 1, 'https://www.belama.de/werkmeister-m-s70-plus-ws/', 'https://www.belama.de/media/image/product/350/md/werkmeister-m-s70-plus-ws-.jpg'),
+(7, 'dormiente Naturlatexmatratze Natural Eco Plus', 785, 1, 4, 'https://www.belama.de/dormiente-natural-eco-plus/', 'https://www.belama.de/media/image/product/596/md/dormiente-natural-eco-plus-.jpg'),
+(8, 'dormiente Naturlatexmatratze Natural Basic 3', 995, 1, 4, 'https://www.belama.de/dormiente-natural-basic-3/', 'https://www.belama.de/media/image/product/102/md/dormiente-natural-basic-3-.jpg'),
+(9, 'dormiente Naturlatexmatratze Natural Basic 4', 995, 1, 4, 'https://www.belama.de/dormiente-natural-basic-4/', 'https://www.belama.de/media/image/product/103/md/dormiente-natural-basic-4-.jpg'),
+(10, 'Shogazi Duo Max Naturlatexmatratze', 848, 1, 4, 'https://www.belama.de/shogazi-duo-max-naturlatexmatratze/', 'https://www.belama.de/media/image/product/472/md/shogazi-duo-max-naturlatexmatratze-.jpg'),
+(11, 'dormiente Naturlatexmatratze Natural Classic Isoform', 1466, 1, 4, 'https://www.belama.de/dormiente-natural-classic-isoform/', 'https://www.belama.de/media/image/product/106/md/dormiente-natural-classic-isoform-.jpg'),
+(12, 'selecta K2 Kindermatratze', 399, 2, 6, 'https://www.belama.de/selecta-k2-kindermatratze/', 'https://www.belama.de/media/image/product/537/md/selecta-k2-kindermatratze-.jpg'),
+(13, 'Werkmeister YoungStar Kindermatratze', 449, 2, 6, 'https://www.belama.de/werkmeister-young-star-kindermatratze/', 'https://www.belama.de/media/image/product/128541/md/werkmeister-young-star-kindermatratze-.jpg'),
+(14, 'Baumberger Vario Kindermatratze', 249, 2, 4, 'https://www.belama.de/baumberger-vario-kindermatratze/', 'https://www.belama.de/media/image/product/805/md/baumberger-vario-kindermatratze-.jpg'),
+(15, 'Prolana Kindermatratze Nele Plus', 699, 2, 4, 'https://www.belama.de/prolana-nele-plus-kindermatratze/', 'https://www.belama.de/media/image/product/906/md/prolana-nele-plus-kindermatratze-.jpg'),
+(16, 'Werkmeister M S55 Plus Kaltschaummatratze', 999, 1, 1, 'https://www.belama.de/werkmeister-m-s55-plus-kaltschaummatratze/', 'https://www.belama.de/media/image/product/116301/md/werkmeister-m-s55-plus-kaltschaummatratze-.jpg'),
+(17, 'Werkmeister M L430 Latexmatratze', 1499, 1, 3, 'https://www.belama.de/werkmeister-m-l430/', 'https://www.belama.de/media/image/product/352/md/werkmeister-m-l430-.jpg'),
+(18, 'selecta L4 Latexmatratze', 699, 1, 3, 'https://www.belama.de/selecta-l4-latexmatratze/', 'https://www.belama.de/media/image/product/113/md/selecta-l4-latexmatratze-.jpg'),
+(19, 'selecta V6 Visco-Matratze', 799, 1, 5, 'https://www.belama.de/selecta-v6/', 'https://www.belama.de/media/image/product/539/md/selecta-v6-.jpg'),
+(20, 'Dermapur Feeling 21 Visco-Matratze', 1098, 1, 5, 'https://www.belama.de/dermapur-matratze-feeling-21/', 'https://www.belama.de/media/image/product/479/md/dermapur-matratze-feeling-21-.jpg');
 
 -- --------------------------------------------------------
 
@@ -353,7 +356,7 @@ CREATE TABLE `size` (
   `s_id` int(11) NOT NULL,
   `width` int(11) NOT NULL,
   `height` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `size`
@@ -381,7 +384,7 @@ CREATE TABLE `size_mattress` (
   `sm_id` int(11) NOT NULL,
   `ma_id` int(11) NOT NULL,
   `s_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `size_mattress`
@@ -627,7 +630,7 @@ ALTER TABLE `allergy`
 -- AUTO_INCREMENT für Tabelle `allergy_mattress`
 --
 ALTER TABLE `allergy_mattress`
-  MODIFY `am_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `am_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT für Tabelle `complaints`
@@ -651,7 +654,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT für Tabelle `haertegrade_mattress`
 --
 ALTER TABLE `haertegrade_mattress`
-  MODIFY `hm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `hm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT für Tabelle `material`

@@ -10,47 +10,45 @@ const validateDefinition = {
   5: 'any'
 }
 
-function showTab(n) {
-  // This function will display the specified tab of the form...
-  var x = document.getElementsByClassName("tab");
-  x[n].style.display = "block";
-  //... and fix the Previous/Next buttons:
-  if (n == 0) {
-    document.getElementById("prevBtn").style.display = "none";
-  } else {
-    document.getElementById("prevBtn").style.display = "inline";
+function showTab(tab) {
+  var allTabs = document.getElementsByClassName("tab"); //enthält alle divs die zur Klasse "tab" gehören
+  allTabs[tab].style.display = "block"; //alle divs "tabs" werden als block displayed
+  if (tab === 0) { //wenn wir uns beim allerersten Tab (siehe var currentTab) befinden ...
+    document.getElementById("prevBtn").style.display = "none"; // ... wird der "Zurück"-Button nicht gezeigt
+  } else { //bei allen weiteren Tabs ...
+    document.getElementById("prevBtn").style.display = "block"; // ... wird der Zurück-Button als inline displayed
   }
-  if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Fertig";
-  } else {
-    document.getElementById("nextBtn").innerHTML = "Weiter";
+  if (tab === (allTabs.length - 1)) { //wenn wir uns beim letzten Tab befinden ...
+    document.getElementById("nextBtn").innerHTML = "Fertig"; // ... steht im "Weiter"-Button "Fertig"
+  } else { // bei allen davor ...
+    document.getElementById("nextBtn").innerHTML = "Weiter"; // ... steht im Weiter-Button "Weiter"
   }
   //... and run a function that will display the correct step indicator:
-  fixStepIndicator(n)
+  fixStepIndicator(tab)
 }
 
-function nextPrev(n) {
+function nextPrev(nextTab) {
   // This function will figure out which tab to display
-  var x = document.getElementsByClassName("tab");
+  var allTabs = document.getElementsByClassName("tab");
   // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
+  if (nextTab === 1 && !validateForm()) return false;
   // Hide the current tab:
-  x[currentTab].style.display = "none";
+  allTabs[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
-  currentTab = currentTab + n;
+  currentTab = currentTab + nextTab;
 
-  if (currentTab === 2) {
-    const sizes = document.querySelectorAll('[data-size]');
-    sizes.forEach(s=>{
-      s.removeAttribute('disabled')
-      if (document.querySelectorAll('[type=radio][name=target]:checked')[0].dataset.value === '1' && s.dataset.size === '2') {
-        s.setAttribute('disabled','')
+  if (currentTab === 2) { // wenn Tab 2 aktiv ist
+    const sizes = document.querySelectorAll('[data-size]'); //Variable die alle html-Elemente mit "data-size" enthalten enthält
+    sizes.forEach(s=>{ //für jedes dieser data-size Elemente ...
+      s.removeAttribute('disabled') //... entferne "disabled" Attribut
+      if (document.querySelectorAll('[type=radio][name=target]:checked')[0].dataset.value === '1' && s.dataset.size === '2') { //wenn bei der 1, Auswahl (siehe const validateDefinition) die data-value === 1 UND bei den data-size === 2 ...
+        s.setAttribute('disabled','') // ... setze "disabled" Attribut für jedes Element, das die Bedinung erfüllt
       }
     })
   }
 
   // if you have reached the end of the form...
-  if (currentTab >= x.length) {
+  if (currentTab >= allTabs.length) {
     // ... the form gets submitted:
     formSubmit()
     return false;
@@ -61,13 +59,13 @@ function nextPrev(n) {
 
 function validateForm() {
   // This function deals with validation of the form fields
-  var x, y, i, valid = true;
-  x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
+  var allTabs, tabInputs, i, valid = true;
+  allTabs = document.getElementsByClassName("tab");
+  tabInputs = allTabs[currentTab].getElementsByTagName("input");
   // A loop that checks every input field in the current tab:
-  for (i = 0, l=y.length; i<l; i++) {
-    if (validateDefinition[currentTab] === 'min1') {
-      if(!checkRadio(document.getElementsByClassName("tab")[currentTab].querySelectorAll('[type=radio]'))){
+  for (i = 0, l=tabInputs.length; i<l; i++) {
+    if (validateDefinition[currentTab] === 'min1') { //wenn der aktuelle Tab min1 entspricht ...
+      if(!checkRadio(document.getElementsByClassName("tab")[currentTab].querySelectorAll('[type=radio]'))){ // ???
         valid = false
       }
     }

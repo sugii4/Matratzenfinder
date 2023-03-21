@@ -8,8 +8,17 @@
     <title>Matratzenfinder</title>
  </head>
  <body>
+    <div id="placeholder">
       <form id="formIndex" action="">
-         <div class="tab">
+      <div style="text-align:center;">
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+      </div>         
+      <div class="tab">
             <h1>Zielgruppe:</h1>
             <p><input type="radio" name="target" data-value="1" oninput="this.className = ''">Erwachsene</p>
             <p><input type="radio" name="target" data-value="2" oninput="this.className = ''">Kinder</p>
@@ -60,23 +69,12 @@
             <p><input type="checkbox" name="complaints" data-value="3" oninput="this.className = ''">Unterer Rücken</p>
             <p><input type="checkbox" name="complaints" data-value="1" oninput="this.className = ''">Ganzer Rücken</p>
         </div>
-
-        <div style="overflow:auto">
-         <div style="float:right">
+        <div>
             <button type="button" id="prevBtn" onclick="nextPrev(-1)">Zurück</button>
             <button type="button" id="nextBtn" onclick="nextPrev(1)">Weiter</button>
-         </div>
-      </div>
-
-      <div style="text-align:center; margin-top:40px;">
-         <span class="step"></span>
-         <span class="step"></span>
-         <span class="step"></span>
-         <span class="step"></span>
-         <span class="step"></span>
-         <span class="step"></span>
-      </div>
+        </div>
       </form>
+    </div>
       <div class="results"></div>
  </body>
 </html>

@@ -3,7 +3,7 @@
  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="functions.js" async defer></script>
     <title>Matratzenfinder</title>
  </head>
@@ -47,16 +47,6 @@
         </div>
 
         <div class="tab">
-            <h1>Material:</h1>
-            <p><input type="radio" name="material" data-value="1" oninput="this.className = ''">Kaltschaum</p>
-            <p><input type="radio" name="material" data-value="2" oninput="this.className = ''">Federkern</p>
-            <p><input type="radio" name="material" data-value="3" oninput="this.className = ''">Latex</p>
-            <p><input type="radio" name="material" data-value="4" oninput="this.className = ''">Naturlatex</p>
-            <p><input type="radio" name="material" data-value="5" oninput="this.className = ''">Viskose</p>
-            <p><input type="radio" name="material" data-value="6" oninput="this.className = ''">Komfortschaum</p>
-        </div>
-
-        <div class="tab">
             <h1>Allergie:</h1>
             <p><input type="checkbox" name="allergy" data-value="1" oninput="this.className = ''">Latex</p>
             <p><input type="checkbox" name="allergy" data-value="2" oninput="this.className = ''">Milben</p>
@@ -64,12 +54,22 @@
         </div>
 
         <div class="tab">
+            <h1>Material:</h1>
+            <p><input type="radio" name="material" data-value="1" oninput="this.className = ''">Kaltschaum</p>
+            <p><input type="radio" name="material" data-value="2" oninput="this.className = ''">Federkern</p>
+            <p><input type="radio" name="material" data-value="3" data-size="latex" oninput="this.className = ''">Latex</p>
+            <p><input type="radio" name="material" data-value="4" data-size="latex" oninput="this.className = ''">Naturlatex</p>
+            <p><input type="radio" name="material" data-value="5" oninput="this.className = ''">Viskose</p>
+            <p><input type="radio" name="material" data-value="6" oninput="this.className = ''">Komfortschaum</p>
+        </div>
+
+        <div class="tab">
             <h1>Beschwerden:</h1>
             <p><input type="checkbox" name="complaints" data-value="2" oninput="this.className = ''">Schultern/Nacken</p>
-            <p><input type="checkbox" name="complaints" data-value="3" oninput="this.className = ''">Unterer Rücken</p>
-            <p><input type="checkbox" name="complaints" data-value="1" oninput="this.className = ''">Ganzer Rücken</p>
+            <p><input type="checkbox" name="complaints" data-value="3" oninput="this.className = ''">Hüfte</p>
+            <p><input type="checkbox" name="complaints" data-value="1" oninput="this.className = ''">Rücken</p>
         </div>
-        <div>
+        <div> 
             <button type="button" id="prevBtn" onclick="nextPrev(-1)">Zurück</button>
             <button type="button" id="nextBtn" onclick="nextPrev(1)">Weiter</button>
         </div>

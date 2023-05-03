@@ -62,127 +62,19 @@ CREATE TABLE sizeMattress (
 
 /* matratzen einfügen */
 
-INSERT INTO mattress (mattress, price, group_fk, material_fk)
-VALUES ("Werkmeister M S70 Plus Kaltschaummatratze", 1149, 1, 1);
 
-INSERT INTO mattress
-VALUES ("Werkmeister M S55 Flexo Kaltschaummatratze", 879, 1, 1);
-
-INSERT INTO mattress
-VALUES ("Werkmeister M T631L Taschenfederkernmatratze", 1339, 1, 2);
-
-INSERT INTO mattress
-VALUES ("Werkmeister M S55 Komfort Kaltschaummatratze", 1129, 1, 1);
-
-INSERT INTO mattress
-VALUES ("Werkmeister M S70 Plus WS Kaltschaummatratze", 1149, 1, 1);
-
-INSERT INTO mattress
-VALUES ("dormiente Naturlatexmatratze Natural Eco Plus", 785, 1, 4);
-
-INSERT INTO mattress
-VALUES ("dormiente Naturlatexmatratze Natural Basic 3", 995, 1, 4);
-
-INSERT INTO mattress
-VALUES ("dormiente Naturlatexmatratze Natural Basic 4", 995, 1, 4);
-
-INSERT INTO mattress
-VALUES ("dormiente Naturmatratze Natur Pur Classic Hanf", 1571, 1, 4);
-
-INSERT INTO mattress
-VALUES ("dormiente Naturmatratze Natur Pur Deluxe Seegras", 2095, 1, 4);
-
-INSERT INTO mattress
-VALUES ("selecta K2 Kindermatratze", 399, 2, 6);
-
-INSERT INTO mattress
-VALUES ("Werkmeister YoungStar Kindermatratze", 449, 2, 6);
-
-INSERT INTO mattress
-VALUES ("Baumberger Vario Kindermatratze", 249, 2, 4);
-
-INSERT INTO mattress
-VALUES ("Prolana Kindermatratze Nele Plus", 699, 2, 4);
-
-INSERT INTO mattress
-VALUES ("Werkmeister M S55 Plus Kaltschaummatratze", 999, 1, 1);
-
-INSERT INTO mattress(mattress, price, group_fk, material_fk)
-VALUES ("Werkmeister M L430 Latexmatratze", 1499, 1, 3);
-
-INSERT INTO mattress(mattress, price, group_fk, material_fk)
-VALUES ("selecta L4 Latexmatratze", 699, 1, 3);
-
-INSERT INTO mattress(mattress, price, group_fk, material_fk)
-VALUES ("selecta V6 Visco-Matratze", 799, 1, 5);
-
-INSERT INTO mattress(mattress, price, group_fk, material_fk)
-VALUES ("Dermapur Feeling 21 Visco-Matratze", 1098, 1, 5);
 
 /* größen einfügen */
 
-INSERT INTO size_mattress(ma_id, s_id)
-VALUES (20, 1);
 
-INSERT INTO size_mattress(ma_id, s_id)
-VALUES (20, 2);
-
-INSERT INTO size_mattress(ma_id, s_id)
-VALUES (20, 3);
-
-INSERT INTO size_mattress(ma_id, s_id)
-VALUES (20, 4);
-
-INSERT INTO size_mattress(ma_id, s_id)
-VALUES (20, 5);
-
-INSERT INTO size_mattress(ma_id, s_id)
-VALUES (20, 6);
-
-INSERT INTO size_mattress(ma_id, s_id)
-VALUES (20, 7);
-
-INSERT INTO size_mattress(ma_id, s_id)
-VALUES (20, 8);
-
-INSERT INTO size_mattress(ma_id, s_id)
-VALUES (20, 9);
-
-INSERT INTO size_mattress(ma_id, s_id)
-VALUES (20, 10);
 
 /* allergien einfügen */
 
-INSERT INTO allergy_mattress(ma_id, a_id)
-VALUES (20, 1);
 
-INSERT INTO allergy_mattress(ma_id, a_id)
-VALUES (20, 2);
-
-INSERT INTO allergy_mattress(ma_id, a_id)
-VALUES (20, 3);
 
 /* beschwerden einfügen */
 
-INSERT INTO complaints_mattress(ma_id, c_id)
-VALUES (18, 1);
 
-INSERT INTO complaints_mattress(ma_id, c_id)
-VALUES (18, 2);
-
-INSERT INTO complaints_mattress(ma_id, c_id)
-VALUES (18, 3);
 
 /* härtegrade hinzufügen */
 
-INSERT INTO haertegrade_mattress(ma_id, h_id)
-VALUES (11, "H1");
-
-INSERT INTO haertegrade_mattress(ma_id, h_id)
-VALUES (20, "H2");
-
-INSERT INTO haertegrade_mattress(ma_id, h_id)
-VALUES (11, "H3");
-
-INSERT INTO haertegrade_mattress(ma_id, h_id)
-VALUES (20, "H4");

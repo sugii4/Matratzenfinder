@@ -5,8 +5,8 @@ const validateDefinition = {
   0: 'min1',
   1: 'min1',
   2: 'min1',
-  3: 'min1',
-  4: 'any',
+  3: 'any',
+  4: 'min1',
   5: 'any'
 }
 
@@ -47,6 +47,16 @@ function nextPrev(nextTab) {
     })
   }
 
+  if (currentTab === 4) {
+    const allergies2 = document.querySelectorAll('[data-size]');
+    allergies2.forEach(a=>{
+      a.removeAttribute('disabled')
+      if (document.querySelectorAll('[type=checkbox][name=allergy]:checked')[0].dataset.value === '1' && a.dataset.size === 'latex') {
+        a.setAttribute('disabled', '')
+      }
+    })
+  }
+
   // if you have reached the end of the form...
   if (currentTab >= allTabs.length) {
     // ... the form gets submitted:
@@ -61,7 +71,7 @@ function validateForm() {
   // This function deals with validation of the form fields
   var allTabs, tabInputs, i, valid = true;
   allTabs = document.getElementsByClassName("tab");
-  tabInputs = allTabs[currentTab].getElementsByTagName("input");
+  tabInputs = allTabs[currentTab].getElementsByTagName('input');
   // A loop that checks every input field in the current tab:
   for (i = 0, l=tabInputs.length; i<l; i++) {
     if (validateDefinition[currentTab] === 'min1') { //wenn der aktuelle Tab min1 entspricht ...

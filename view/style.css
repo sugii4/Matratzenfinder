@@ -14,13 +14,14 @@ html, body {
 }
 
 #formIndex {
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(105, 105, 105, 0.651) 0px 2px 8px 0px;
     margin: 5% auto;
     padding: 3%;
     max-width: 60%;
     min-width: 50%;
-    border-radius: 2%;
+    border-radius: 1%;
     height: 50%;
+    display: grid;
 }
 
 h1 {
@@ -43,7 +44,6 @@ button {
     border-radius: 6%;
     display: block;
     width: 10%;
-    height: 10%;
     padding: 1.5%;
     font-size: 16px;
     cursor: pointer;
@@ -74,7 +74,7 @@ button:hover {
 }
 
 .step.finish {
-    background-color: #04AA6D;
+    background-color: #2b89e0;
 }
 
 .results {
@@ -92,9 +92,11 @@ button:hover {
 
 .images {
     height: 10%;
-    width: 50%;
+    width: 90%;
+    align-self: center;
 }
 
+/*
 [type=radio] {
     position: absolute;
     opacity: 0;
@@ -107,7 +109,7 @@ button:hover {
     opacity: 0;
     width: 0;
     height: 0;
-}
+} */
 
 [type=radio] + img {
     cursor: pointer;
@@ -117,5 +119,39 @@ button:hover {
     width: 50%;
     height: 20%;
     cursor: pointer;
-    background-color:#139bda;
+    background-color:#139bdab6;
+}
+
+.title {
+    grid-area: title;
+}
+
+.tabGridTarget {
+    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas: "title title";
+}
+
+.tabGridHardness {
+    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: repeat(4, 25%);
+    grid-template-areas: "title title title title";
+}
+
+.tabGridSizes {
+    grid-template-rows: repeat(3, 33%);
+    grid-template-columns: repeat(5, 20%);
+    grid-template-areas: "title title title title title";
+}
+
+.tabGridAllergies {
+    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: repeat(3, 33%);
+    grid-template-areas: "title title title";
+}
+
+.tabGridMaterial {
+    grid-template-rows: repeat(3, 33%);
+    grid-template-columns: repeat(3, 33%);
+    grid-template-areas: "title title title";
 }

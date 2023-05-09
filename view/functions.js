@@ -12,7 +12,7 @@ const validateDefinition = {
 
 function showTab(tab) {
   var allTabs = document.getElementsByClassName("tab"); //enthält alle divs die zur Klasse "tab" gehören
-  allTabs[tab].style.display = "block"; //alle divs "tabs" werden als block displayed
+  allTabs[tab].style.display = "grid"; //alle divs "tabs" werden als block displayed
   if (tab === 0) { //wenn wir uns beim allerersten Tab (siehe var currentTab) befinden ...
     document.getElementById("prevBtn").style.display = "none"; // ... wird der "Zurück"-Button nicht gezeigt
   } else { //bei allen weiteren Tabs ...

@@ -10,21 +10,23 @@
  <body>
     <div id="placeholder">
       <form id="formIndex" action="">
-      <div style="text-align:center;">
+      <div style="text-align:center;" id="steps">
          <span class="step"></span>
          <span class="step"></span>
          <span class="step"></span>
          <span class="step"></span>
          <span class="step"></span>
          <span class="step"></span>
-      </div>         
-      <div class="tab">
-            <h1>Zielgruppe:</h1>
+      </div>     
+
+      <div class="tab tabGridTarget">
+        <div class="title">
+          <h1>Zielgruppe:</h1>
+        </div>
             <label>
                 <div class="options">
                    <p>Erwachsene</p> 
                 </div>
-                
                 <input class="radio" type="radio" name="target" data-value="1" oninput="this.className = ''">
                 <img class="images" src="">
             </label>  
@@ -32,14 +34,15 @@
                 <div class="options">
                   <p>Kinder</p>  
                 </div>
-                
                 <input class="radio" type="radio" name="target" data-value="2" oninput="this.className = ''">
                 <img class="images" src="">
             </label>
         </div>
 
-        <div class="tab">
+        <div class="tab tabGridHardness">
+          <div class="title">
             <h1>Härtegrad:</h1>
+          </div>
             <label>
                 <div class="options">
                   <p>H1</p> 
@@ -66,8 +69,10 @@
             </label>
         </div>
 
-        <div class="tab">
+        <div class="tab tabGridSizes">
+          <div class="title">
             <h1>Matratzengröße:</h1>
+          </div>
             <label>
                 <div class="options">
                   <p>60x120</p> 
@@ -130,8 +135,10 @@
             </label>
         </div>
 
-        <div class="tab">
+        <div class="tab tabGridAllergies">
+          <div class="title">
             <h1>Allergie:</h1>
+          </div>
             <label>
                 <div class="options">
                   <p>Latex</p> 
@@ -152,8 +159,10 @@
             </label>
         </div>
 
-        <div class="tab">
+        <div class="tab tabGridMaterial">
+          <div class="title">
             <h1>Material:</h1>
+          </div>
             <label>
                 <div class="options">
                   <p>Kaltschaum</p> 
@@ -192,8 +201,10 @@
             </label>
         </div>
 
-        <div class="tab">
+        <div class="tab tabGridAllergies">
+          <div class="title">
             <h1>Beschwerden:</h1>
+          </div>
             <label>
                 <div class="options">
                   <p>Schultern/Nacken</p> 

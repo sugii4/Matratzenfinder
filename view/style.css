@@ -89,3 +89,33 @@ button:hover {
     padding: 3em;
     margin: 0 4px;
 }
+
+.images {
+    height: 10%;
+    width: 50%;
+}
+
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+[type=radio] + img {
+    cursor: pointer;
+}
+
+.options {
+    width: 50%;
+    height: 20%;
+    cursor: pointer;
+    background-color:#139bda;
+}

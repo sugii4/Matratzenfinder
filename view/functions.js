@@ -140,7 +140,7 @@ async function formSubmit() {
   const response = await fetch('controller.php',{method:'POST',body:data})
   const json = await response.json()
 
-  document.querySelector('form').remove()
+  document.querySelector('#placeholder').remove()
 if(json.length === 0) {
   let c = document.createElement('p')
   c.innerText = "sorry nix gefunden! loser"
@@ -154,7 +154,7 @@ if(json.length === 0) {
     }).format(e.price)
 
     let ausgabe = document.createElement('div')
-    ausgabe.innerHTML = `${e.name}<br>${price}<br><img src="${e.picture}"><br><a target="_blank" href="${e.url}">${e.url}</a>`
+    ausgabe.innerHTML = `${e.name}<br>${price}<br><img style="height:200px;width:200px" src="${e.picture}"><br><a target="_blank" href="${e.url}">${e.url}</a>`
     document.querySelector('.results').appendChild(ausgabe)
   })
 } 

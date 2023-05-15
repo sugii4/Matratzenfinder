@@ -115,6 +115,10 @@ button:hover {
     cursor: pointer;
 }
 
+div:has(+input[disabled]) {
+    background-color: red;
+}
+
 .options {
     width: 50%;
     height: 20%;

@@ -18,10 +18,14 @@ function showTab(tab) {
   } else { //bei allen weiteren Tabs ...
     document.getElementById("prevBtn").style.display = "block"; // ... wird der Zurück-Button als inline displayed
   }
-  if (tab === (allTabs.length - 1)) { //wenn wir uns beim letzten Tab befinden ...
+  if (tab === (allTabs.length - 2)) { //wenn wir uns beim letzten Tab befinden ...
     document.getElementById("nextBtn").innerHTML = "Fertig"; // ... steht im "Weiter"-Button "Fertig"
   } else { // bei allen davor ...
     document.getElementById("nextBtn").innerHTML = "Weiter"; // ... steht im Weiter-Button "Weiter"
+  }
+
+  if (tab === (allTabs.length - 1)) {
+    document.getElementById("nextBtn").style.display = "none";
   }
   //... and run a function that will display the correct step indicator:
   fixStepIndicator(tab)
@@ -140,30 +144,22 @@ async function formSubmit() {
   const response = await fetch('controller.php',{method:'POST',body:data})
   const json = await response.json()
 
-  document.querySelector('#placeholder').remove()
-  
+
 if(json.length === 0) {
   let c = document.createElement('p')
   c.innerText = "sorry nix gefunden! loser"
   document.body.appendChild(c)
 } else {
-  document.getElementById("results").style.display = "grid";
   json.forEach(e=>{
-
-    
 
     price = new Intl.NumberFormat('de-DE', {
     style: 'currency',
     currency: 'EUR'
     }).format(e.price)
 
-   
-
     let ausgabe = document.createElement('div')
-    let ausgabeID = document.getElementById("resultContainer")
-    document.body.insertBefore(ausgabe, ausgabeID)
     ausgabe.innerHTML = `<h2>${e.name}</h2><br><p>${price}</p><br><img style="height:200px;width:200px" src="${e.picture}"><br><p><a target="_blank" href="${e.url}">${e.url}</a></p>`
-    document.querySelector('#results').appendChild(ausgabe)
+    document.querySelector('#resultsID').appendChild(ausgabe)
   })
 }
 }

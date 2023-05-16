@@ -60,17 +60,14 @@ CREATE TABLE sizeMattress (
     `s_id` INT FOREIGN KEY NOT NULL
 )
 
-/* matratzen einfügen */
-
-
-
 /* größen einfügen */
 
 
 
 /* allergien einfügen */
 
-
+insert into allergy_mattress (ma_id, a_id)
+values ( , )
 
 /* beschwerden einfügen */
 

@@ -16,13 +16,12 @@ html, body {
 #formIndex {
     box-shadow: rgba(105, 105, 105, 0.651) 0px 2px 8px 0px;
     margin: 5% auto;
-    padding: 2%;
+    padding: 3%;
     max-width: 60%;
     min-width: 50%;
     border-radius: 1%;
-    height: 80%;
+    height: 50%;
     display: grid;
-    grid-template-rows: 8fr 1fr 1fr;
 }
 
 h1 {
@@ -39,7 +38,7 @@ input {
 }
 
 button {
-    background-color: #49a6fd;
+    background-color: #139bda;
     color: #ffffff;
     border: none;
     border-radius: 6%;
@@ -75,11 +74,7 @@ button:hover {
 }
 
 .step.finish {
-    background-color: #4f9ae0;
-}
-
-#results {
-    display: none;
+    background-color: #2b89e0;
 }
 
 #results div {
@@ -90,12 +85,19 @@ button:hover {
     margin: 0 4px;
 }
 
-.images {
-    height: 80%;
-    width: 90%;
-    margin-left: 5%;
+#resultsID {
+    grid-template-rows: repeat(3, 33%);
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas: "title title";
 }
 
+.images {
+    height: 10%;
+    width: 90%;
+    align-self: center;
+}
+
+/*
 [type=radio] {
     position: absolute;
     opacity: 0;
@@ -108,26 +110,21 @@ button:hover {
     opacity: 0;
     width: 0;
     height: 0;
-}
+} */
 
 [type=radio] + img {
     cursor: pointer;
 }
 
 div:has(+input[disabled]) {
-    background-color: #a9d5ffcc;
-    cursor: default;
-}
-
-div:has(+input:checked) {
-    background-color: #1d85e7cc;
+    background-color: red;
 }
 
 .options {
     width: 50%;
-    height: 10%;
+    height: 20%;
     cursor: pointer;
-    background-color:#63b2fccc;
+    background-color:#139bdab6;
 }
 
 .title {
@@ -135,7 +132,7 @@ div:has(+input:checked) {
 }
 
 .tabGridTarget {
-    grid-template-rows: 20% 80%;
+    grid-template-rows: repeat(2, 50%);
     grid-template-columns: repeat(2, 50%);
     grid-template-areas: "title title";
 }

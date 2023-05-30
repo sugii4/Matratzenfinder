@@ -7,25 +7,26 @@ const validateDefinition = {
   2: 'min1',
   3: 'any',
   4: 'min1',
-  5: 'any'
+  5: 'min1'
 }
 
 function showTab(tab) {
   var allTabs = document.getElementsByClassName("tab"); //enthält alle divs die zur Klasse "tab" gehören
   allTabs[tab].style.display = "grid"; //alle divs "tabs" werden als block displayed
   if (tab === 0) { //wenn wir uns beim allerersten Tab (siehe var currentTab) befinden ...
-    document.getElementById("prevBtn").style.display = "none"; // ... wird der "Zurück"-Button nicht gezeigt
+    document.getElementById("prevBtn").style.opacity = "0"; // ... wird der "Zurück"-Button nicht gezeigt
+    const prevBtn = document.getElementById("prevBtn")
+    prevBtn.setAttribute('disabled', '')
+    prevBtn.style.cursor = "default"
   } else { //bei allen weiteren Tabs ...
-    document.getElementById("prevBtn").style.display = "block"; // ... wird der Zurück-Button als inline displayed
+    document.getElementById("prevBtn").style.opacity = "1"; // ... wird der Zurück-Button als inline displayed
+    prevBtn.removeAttribute('disabled')
+    prevBtn.style.cursor = "pointer"
   }
-  if (tab === (allTabs.length - 2)) { //wenn wir uns beim letzten Tab befinden ...
+  if (tab === (allTabs.length - 1)) { //wenn wir uns beim letzten Tab befinden ...
     document.getElementById("nextBtn").innerHTML = "Fertig"; // ... steht im "Weiter"-Button "Fertig"
   } else { // bei allen davor ...
     document.getElementById("nextBtn").innerHTML = "Weiter"; // ... steht im Weiter-Button "Weiter"
-  }
-
-  if (tab === (allTabs.length - 1)) {
-    document.getElementById("nextBtn").style.display = "none";
   }
   //... and run a function that will display the correct step indicator:
   fixStepIndicator(tab)
@@ -117,6 +118,7 @@ async function formSubmit() {
   formdata.set('hardness', document.querySelectorAll('[type=radio][name=hardness]:checked')[0].dataset.value)
   formdata.set('size', document.querySelectorAll('[type=radio][name=size]:checked')[0].dataset.value)
   formdata.set('material', document.querySelectorAll('[type=radio][name=material]:checked')[0].dataset.value)
+  formdata.set('complaints', document.querySelectorAll('[type=radio][name=target]:checked')[0].dataset.value)
 
   const allergies = document.querySelectorAll('[type=checkbox][name=allergy]:checked')
   if (allergies.length === 0) {
@@ -124,15 +126,6 @@ async function formSubmit() {
   } else {
     allergies.forEach(a=>{
       formdata.append('allergy[]', a.dataset.value)
-    })
-  }
-
-  const beschwerden = document.querySelectorAll('[type=checkbox][name=complaints]:checked')
-  if (beschwerden.length === 0) {
-    formdata.append('complaints[]', '')
-  } else {
-    beschwerden.forEach(a=>{
-      formdata.append('complaints[]', a.dataset.value)
     })
   }
 
@@ -144,22 +137,33 @@ async function formSubmit() {
   const response = await fetch('controller.php',{method:'POST',body:data})
   const json = await response.json()
 
-
+  document.querySelector('#placeholder').remove()
+  
 if(json.length === 0) {
-  let c = document.createElement('p')
-  c.innerText = "sorry nix gefunden! loser"
-  document.body.appendChild(c)
+ //let c = document.createElement('p')
+ //c.innerText = "sorry nix gefunden! loser"
+ //document.body.appendChild(c)
+ window.open("https://www.google.de", "_self") //hier die 404-Seite verlinken
 } else {
+  document.getElementById("results").style.display = "grid";
   json.forEach(e=>{
+
+    
 
     price = new Intl.NumberFormat('de-DE', {
     style: 'currency',
     currency: 'EUR'
     }).format(e.price)
 
+   
+
     let ausgabe = document.createElement('div')
-    ausgabe.innerHTML = `<h2>${e.name}</h2><br><p>${price}</p><br><img style="height:200px;width:200px" src="${e.picture}"><br><p><a target="_blank" href="${e.url}">${e.url}</a></p>`
-    document.querySelector('#resultsID').appendChild(ausgabe)
+    ausgabe.className = 'mattress'
+    let ausgabeID = document.getElementById("resultContainer")
+    document.body.insertBefore(ausgabe, ausgabeID)
+    ausgabe.innerHTML = `<p class="mattressTitle">${e.name}</p><br><img class="resultImage" src="${e.picture}"><br><p>ab ${price}</p><br><button class="resultButton"><a target="_blank" href="${e.url}">zur Matratze ></a></button>`
+    document.querySelector('#results').appendChild(ausgabe)
+    document.getElementById("reloadBtn").style.display = "block"
   })
 }
 }

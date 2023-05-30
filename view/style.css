@@ -22,7 +22,7 @@ html, body {
     border-radius: 1%;
     height: 80%;
     display: grid;
-    grid-template-rows: 8fr 1fr 1fr;
+    grid-template-rows: 6fr 1fr;
 }
 
 h1 {
@@ -38,8 +38,9 @@ input {
     display: none;
 }
 
+
 button {
-    background-color: #49a6fd;
+    background-color: #074890;
     color: #ffffff;
     border: none;
     border-radius: 6%;
@@ -48,7 +49,6 @@ button {
     padding: 1.5%;
     font-size: 16px;
     cursor: pointer;
-    float: right;
 }
 
 button:hover {
@@ -57,13 +57,20 @@ button:hover {
 
 #prevBtn {
     background-color: #bbbbbb;
+    height: 60%;
+    margin-right: 3%;
+}
+
+#nextBtn {
+    height:60%;
+    margin-left: 3%;
 }
 
 .step {
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbbbbb;
+    background-color: #9fb8d4;
     border: none;
     border-radius: 50%;
     display: inline-block;
@@ -75,25 +82,75 @@ button:hover {
 }
 
 .step.finish {
-    background-color: #4f9ae0;
+    background-color: #074890;
+}
+
+#steps {
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
 }
 
 #results {
     display: none;
+    box-shadow: rgba(105, 105, 105, 0.651) 0px 2px 8px 0px;
+    margin: 5% auto;
+    padding: 1%;
+    max-width: 60%;
+    min-width: 50%;
+    border-radius: 1%;
+    height: 80%;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-areas: "title title title title";
+    justify-content: center;
+    gap: 0.5%;
 }
 
-#results div {
-    background-color: white;
-    color:black;
-    border-radius: 1em;
-    padding: 3em;
-    margin: 0 4px;
+#results h1 {
+    margin-top: 1%;
+}
+
+.mattressTitle {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#reloadBtn {
+    grid-area: 3 / 4;
+    width: 35%;
+    height:50%;
+    margin-left: 50%;
+    margin-top: 10%;
+}
+
+.mattress {
+    padding-left: 5%;
+    box-shadow: rgba(105, 105, 105, 0.651) 0px 2px 8px 0px;
+    border-radius: 1%;
 }
 
 .images {
     height: 80%;
     width: 90%;
     margin-left: 5%;
+}
+
+.resultImage {
+    width: 90%;
+    height: 50%;
+}
+
+.resultButton {
+    width: 60%;
+    height: 10%;
+    margin-right: 25%;
+
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
 
 [type=radio] {
@@ -115,19 +172,67 @@ button:hover {
 }
 
 div:has(+input[disabled]) {
-    background-color: #a9d5ffcc;
+    background-color: #84afdd;
     cursor: default;
 }
 
+div:has(+input[disabled]):hover {
+    opacity: 1;
+}
+
 div:has(+input:checked) {
-    background-color: #1d85e7cc;
+    opacity: 0.5;
+    color: white;
+}
+
+img:has(+input:checked) {
+    opacity: 0.8;
+}
+
+img {
+    cursor: pointer;
 }
 
 .options {
-    width: 50%;
+    width: 60%;
     height: 10%;
     cursor: pointer;
-    background-color:#63b2fccc;
+    background-color:#1d66b4;
+    border-color: #1d66b4;
+    color: white;
+    box-shadow: rgba(105, 105, 105, 0.651) 0px 2px 8px 0px;
+    border-radius: 5%;
+    display: inline-block;
+    text-align: center;
+}
+
+.options:hover {
+    opacity: 0.5;
+}
+
+.hardnessOptions {
+    height: 17%;
+    margin-left: 19%;
+}
+
+.sizeOptions {
+    height: 26%;
+    margin-left: 19%;
+}
+
+.allergyOptions {
+    height: 18%;
+    margin-left: 20%;
+}
+
+.materialOptions {
+    height: 26%;
+    margin-left: 21%;
+}
+
+.complaintsOptions {
+    height: 18%;
+    margin-left: 21%;
 }
 
 .title {

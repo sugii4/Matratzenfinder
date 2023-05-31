@@ -271,7 +271,7 @@
 									"top": 218,
 									"width": 205,
 									"height": 13,
-									"text": "Eingabe persönliche Daten",
+									"text": "Eingabe Häertegrad",
 									"wordWrap": true
 								}
 							],
@@ -316,7 +316,7 @@
 									"top": 300.25,
 									"width": 113.09716796875,
 									"height": 56.5,
-									"text": "Körpergröße und Körpergewicht eingegeben?",
+									"text": "Antwortmöglichkeit ausgewählt?",
 									"wordWrap": true
 								}
 							],
@@ -608,7 +608,7 @@
 									"top": 490,
 									"width": 205,
 									"height": 13,
-									"text": "Eingabe gewünschtes Material",
+									"text": "Eingabe Allergie",
 									"wordWrap": true
 								}
 							],
@@ -732,7 +732,7 @@
 							},
 							"font": "Arial;13;0",
 							"lineStyle": 1,
-							"points": "192:600;144:600;144:496;192:496",
+							"points": "304:656;304:680;480:680;480:464;624:464;624:480",
 							"headEndStyle": 2
 						},
 						{
@@ -742,8 +742,8 @@
 								"$ref": "AAAAAAGEntbDoUPE6r0="
 							},
 							"font": "Arial;13;0",
-							"left": 144,
-							"top": 600,
+							"left": 320,
+							"top": 656,
 							"width": 36.736328125,
 							"height": 25,
 							"text": "Nein"
@@ -769,7 +769,7 @@
 									"top": 490,
 									"width": 205,
 									"height": 13,
-									"text": "Eingabe Allergie",
+									"text": "Eingabe Material",
 									"wordWrap": true
 								}
 							],
@@ -1087,8 +1087,8 @@
 										"$ref": "AAAAAAGEnwezCUZHW+s="
 									},
 									"font": "Arial;13;0",
-									"left": 202,
-									"top": 738,
+									"left": 634,
+									"top": 802,
 									"width": 205,
 									"height": 13,
 									"text": "Auswahl Matratze",
@@ -1096,8 +1096,8 @@
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 192,
-							"top": 728,
+							"left": 624,
+							"top": 792,
 							"width": 225,
 							"height": 33,
 							"nameLabel": {
@@ -1112,7 +1112,7 @@
 							},
 							"font": "Arial;13;0",
 							"lineStyle": 1,
-							"points": "1144:600;1192:600;1192:696;304:696;304:728",
+							"points": "1144:600;1192:600;1192:712;304:712;304:752",
 							"headEndStyle": 2
 						},
 						{
@@ -1132,8 +1132,8 @@
 										"$ref": "AAAAAAGEnxm6E0bjBys="
 									},
 									"font": "Arial;13;0",
-									"left": 234,
-									"top": 802,
+									"left": 658,
+									"top": 874,
 									"width": 141,
 									"height": 13,
 									"text": "Ende",
@@ -1141,8 +1141,8 @@
 								}
 							],
 							"font": "Arial;13;0",
-							"left": 224,
-							"top": 792,
+							"left": 648,
+							"top": 864,
 							"width": 161,
 							"height": 33,
 							"nameLabel": {
@@ -1170,8 +1170,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 318,
-									"top": 769,
+									"left": 742,
+									"top": 837,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -1189,7 +1189,7 @@
 								"$ref": "AAAAAAGEnwezCUZHW+s="
 							},
 							"lineStyle": 2,
-							"points": "304:760;304:792",
+							"points": "728:824;728:864",
 							"nameLabel": {
 								"$ref": "AAAAAAGEnxpJW0bxShU="
 							}
@@ -1206,6 +1206,211 @@
 							"width": 23.72998046875,
 							"height": 25,
 							"text": "Ja"
+						},
+						{
+							"_type": "FCDecisionView",
+							"_id": "AAAAAAGIce3YDdzYvPY=",
+							"_parent": {
+								"$ref": "AAAAAAGEntbDoUPE6r0="
+							},
+							"model": {
+								"$ref": "AAAAAAGIce3YDNzW+xk="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAGIce3YDdzZX5c=",
+									"_parent": {
+										"$ref": "AAAAAAGIce3YDdzYvPY="
+									},
+									"font": "Arial;13;0",
+									"left": 240.25,
+									"top": 780.25,
+									"width": 128.5,
+									"height": 56.5,
+									"text": "Ergebnis?",
+									"wordWrap": true
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 176,
+							"top": 752,
+							"width": 257,
+							"height": 113,
+							"nameLabel": {
+								"$ref": "AAAAAAGIce3YDdzZX5c="
+							}
+						},
+						{
+							"_type": "FCFlowView",
+							"_id": "AAAAAAGIce8WA9zxT6M=",
+							"_parent": {
+								"$ref": "AAAAAAGEntbDoUPE6r0="
+							},
+							"model": {
+								"$ref": "AAAAAAGIce8WA9zvaZc="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAGIce8WA9zyl74=",
+									"_parent": {
+										"$ref": "AAAAAAGIce8WA9zxT6M="
+									},
+									"model": {
+										"$ref": "AAAAAAGIce8WA9zvaZc="
+									},
+									"font": "Arial;13;0",
+									"left": 448,
+									"top": 791,
+									"width": 13.72998046875,
+									"height": 13,
+									"alpha": -3.275914113476767,
+									"distance": 74.67261881037788,
+									"hostEdge": {
+										"$ref": "AAAAAAGIce8WA9zxT6M="
+									},
+									"edgePosition": 1,
+									"text": "Ja"
+								}
+							],
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAGEnwezCUZHW+s="
+							},
+							"tail": {
+								"$ref": "AAAAAAGIce3YDdzYvPY="
+							},
+							"lineStyle": 2,
+							"points": "432:808;624:808",
+							"nameLabel": {
+								"$ref": "AAAAAAGIce8WA9zyl74="
+							}
+						},
+						{
+							"_type": "FCProcessView",
+							"_id": "AAAAAAGIce/L6tz/g8w=",
+							"_parent": {
+								"$ref": "AAAAAAGEntbDoUPE6r0="
+							},
+							"model": {
+								"$ref": "AAAAAAGIce/L6tz9nBI="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAGIce/L6t0Asjs=",
+									"_parent": {
+										"$ref": "AAAAAAGIce/L6tz/g8w="
+									},
+									"font": "Arial;13;0",
+									"left": 626,
+									"top": 946,
+									"width": 205,
+									"height": 13,
+									"text": "404-Seite",
+									"wordWrap": true
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 616,
+							"top": 936,
+							"width": 225,
+							"height": 33,
+							"nameLabel": {
+								"$ref": "AAAAAAGIce/L6t0Asjs="
+							}
+						},
+						{
+							"_type": "FCFlowView",
+							"_id": "AAAAAAGIcfBIkt0NPzo=",
+							"_parent": {
+								"$ref": "AAAAAAGEntbDoUPE6r0="
+							},
+							"model": {
+								"$ref": "AAAAAAGIcfBIkt0Ltd0="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAGIcfBIkt0OQng=",
+									"_parent": {
+										"$ref": "AAAAAAGIcfBIkt0NPzo="
+									},
+									"model": {
+										"$ref": "AAAAAAGIcfBIkt0Ltd0="
+									},
+									"font": "Arial;13;0",
+									"left": 319,
+									"top": 928,
+									"width": 26.736328125,
+									"height": 13,
+									"alpha": 0.5713373173787942,
+									"distance": 33.28663395418648,
+									"hostEdge": {
+										"$ref": "AAAAAAGIcfBIkt0NPzo="
+									},
+									"edgePosition": 1,
+									"text": "Nein"
+								}
+							],
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAGIce/L6tz/g8w="
+							},
+							"tail": {
+								"$ref": "AAAAAAGIce3YDdzYvPY="
+							},
+							"lineStyle": 2,
+							"points": "304:864;304:952;616:952",
+							"nameLabel": {
+								"$ref": "AAAAAAGIcfBIkt0OQng="
+							}
+						},
+						{
+							"_type": "FCFlowView",
+							"_id": "AAAAAAGIcfDfet0dKFo=",
+							"_parent": {
+								"$ref": "AAAAAAGEntbDoUPE6r0="
+							},
+							"model": {
+								"$ref": "AAAAAAGIcfDfet0bZWQ="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAGIcfDfet0eezw=",
+									"_parent": {
+										"$ref": "AAAAAAGIcfDfet0dKFo="
+									},
+									"model": {
+										"$ref": "AAAAAAGIcfDfet0bZWQ="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 713,
+									"top": 909,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAGIcfDfet0dKFo="
+									},
+									"edgePosition": 1
+								}
+							],
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAGEnxm6E0bjBys="
+							},
+							"tail": {
+								"$ref": "AAAAAAGIce/L6tz/g8w="
+							},
+							"lineStyle": 2,
+							"points": "728:936;728:896",
+							"nameLabel": {
+								"$ref": "AAAAAAGIcfDfet0eezw="
+							}
 						}
 					]
 				},
@@ -1269,7 +1474,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGEntbDoUPDrDU="
 					},
-					"name": "Eingabe persönliche Daten",
+					"name": "Eingabe Häertegrad",
 					"ownedElements": [
 						{
 							"_type": "FCFlow",
@@ -1292,7 +1497,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGEntbDoUPDrDU="
 					},
-					"name": "Körpergröße und Körpergewicht eingegeben?"
+					"name": "Antwortmöglichkeit ausgewählt?"
 				},
 				{
 					"_type": "FCProcess",
@@ -1331,7 +1536,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGEntbDoUPDrDU="
 					},
-					"name": "Eingabe gewünschtes Material",
+					"name": "Eingabe Allergie",
 					"ownedElements": [
 						{
 							"_type": "FCFlow",
@@ -1362,7 +1567,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGEntbDoUPDrDU="
 					},
-					"name": "Eingabe Allergie",
+					"name": "Eingabe Material",
 					"ownedElements": [
 						{
 							"_type": "FCFlow",
@@ -1448,6 +1653,67 @@
 						"$ref": "AAAAAAGEntbDoUPDrDU="
 					},
 					"name": "Ende"
+				},
+				{
+					"_type": "FCDecision",
+					"_id": "AAAAAAGIce3YDNzW+xk=",
+					"_parent": {
+						"$ref": "AAAAAAGEntbDoUPDrDU="
+					},
+					"name": "Ergebnis?",
+					"ownedElements": [
+						{
+							"_type": "FCFlow",
+							"_id": "AAAAAAGIce8WA9zvaZc=",
+							"_parent": {
+								"$ref": "AAAAAAGIce3YDNzW+xk="
+							},
+							"name": "Ja",
+							"source": {
+								"$ref": "AAAAAAGIce3YDNzW+xk="
+							},
+							"target": {
+								"$ref": "AAAAAAGEnwezCUZFYYQ="
+							}
+						},
+						{
+							"_type": "FCFlow",
+							"_id": "AAAAAAGIcfBIkt0Ltd0=",
+							"_parent": {
+								"$ref": "AAAAAAGIce3YDNzW+xk="
+							},
+							"name": "Nein",
+							"source": {
+								"$ref": "AAAAAAGIce3YDNzW+xk="
+							},
+							"target": {
+								"$ref": "AAAAAAGIce/L6tz9nBI="
+							}
+						}
+					]
+				},
+				{
+					"_type": "FCProcess",
+					"_id": "AAAAAAGIce/L6tz9nBI=",
+					"_parent": {
+						"$ref": "AAAAAAGEntbDoUPDrDU="
+					},
+					"name": "404-Seite",
+					"ownedElements": [
+						{
+							"_type": "FCFlow",
+							"_id": "AAAAAAGIcfDfet0bZWQ=",
+							"_parent": {
+								"$ref": "AAAAAAGIce/L6tz9nBI="
+							},
+							"source": {
+								"$ref": "AAAAAAGIce/L6tz9nBI="
+							},
+							"target": {
+								"$ref": "AAAAAAGEnxm6E0bhQ/0="
+							}
+						}
+					]
 				}
 			]
 		}

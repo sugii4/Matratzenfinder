@@ -12,12 +12,12 @@ const validateDefinition = {
 
 function showTab(tab) {
   var allTabs = document.getElementsByClassName("tab"); //enthält alle divs die zur Klasse "tab" gehören
-  allTabs[tab].style.display = "grid"; //alle divs "tabs" werden als block displayed
+  allTabs[tab].style.display = "grid"; //alle divs "tabs" werden als grid displayed
   if (tab === 0) { //wenn wir uns beim allerersten Tab (siehe var currentTab) befinden ...
     document.getElementById("prevBtn").style.opacity = "0"; // ... wird der "Zurück"-Button nicht gezeigt
     const prevBtn = document.getElementById("prevBtn")
     prevBtn.setAttribute('disabled', '')
-    prevBtn.style.cursor = "default" // ... wird der "Zurück"-Button nicht gezeigt
+    prevBtn.style.cursor = "default"
   } else { //bei allen weiteren Tabs ...
     document.getElementById("prevBtn").style.opacity = "1"; // ... wird der Zurück-Button als inline displayed
     prevBtn.removeAttribute('disabled')

@@ -32,7 +32,3 @@ SQL;
 
 $b = $a->query($sql)->fetch_all(MYSQLI_ASSOC);
 echo json_encode($b);
-// Todo:
-// paar Namen von Variablen umändern
-// Design erstellen für Haupt-Form, Ergebnis-Seite und die kein-Ergebnis-Seite
-// Datenbank ergänzen um Links und Bilder

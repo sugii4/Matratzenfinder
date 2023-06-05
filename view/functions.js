@@ -56,7 +56,7 @@ function nextPrev(nextTab) {
     const allergies2 = document.querySelectorAll('[data-size]');
     allergies2.forEach(a=>{
       a.removeAttribute('disabled')
-      if (document.querySelectorAll('[type=checkbox][name=allergy]:checked')[0].dataset.value === '1' && a.dataset.size === 'latex') {
+      if (document.querySelectorAll('[type=checkbox][name=allergy]:checked')[0]?.dataset.value === '1' && a.dataset.size === 'latex') {
         a.setAttribute('disabled', '')
       }
     })
@@ -84,6 +84,9 @@ function validateForm() {
         valid = false
       }
     }
+  }
+  if (validateDefinition[currentTab] === 'any') {
+    valid = true
   }
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
@@ -139,10 +142,7 @@ async function formSubmit() {
   document.querySelector('#placeholder').remove()
   
 if(json.length === 0) {
- //let c = document.createElement('p')
- //c.innerText = "sorry nix gefunden! loser"
- //document.body.appendChild(c)
- window.open("https://www.google.de", "_self") //hier die 404-Seite verlinken
+ document.getElementById('noResults').style.display = "block";
 } else {
   document.getElementById("results").style.display = "grid";
   json.forEach(e=>{

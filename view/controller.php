@@ -14,7 +14,7 @@ $a = mysqli_connect('localhost', 'root', '', 'matratzenfinder');
 
 $selectAllergy = '';
 
-if ($allergy) {
+if (!(count($allergy) === 1 && $allergy[0] === '')) {
     $selectAllergy = 'AND am.a_id in('.implode(',', $allergy).')';
 }
 
@@ -30,5 +30,5 @@ ORDER BY RAND()
 LIMIT 4;
 SQL;
 
-$b = $a->query($sql)->fetch_all(MYSQLI_ASSOC);
-echo json_encode($b);
+$b = $a->query($sql)->fetch_all(MYSQLI_ASSOC); //assoziatives Array
+echo json_encode($b); //Array als json "umgebaut"

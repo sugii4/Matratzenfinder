@@ -40,5 +40,5 @@ ORDER BY RAND()
 LIMIT 4;
 SQL;
 
-$b = $a->query($sql)->fetch_all(MYSQLI_ASSOC); //assoziatives Array
-echo json_encode($b); //Array als json "umgebaut"
+$b = $a->query($sql)->fetch_all(MYSQLI_ASSOC);
+echo json_encode($b);

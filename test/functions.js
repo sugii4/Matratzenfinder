@@ -12,7 +12,7 @@ const validateDefinition = {
 
 function showTab(tab) {
   var allTabs = document.getElementsByClassName("tab"); //enthält alle divs die zur Klasse "tab" gehören
-  allTabs[tab].style.display = "grid"; //alle divs "tabs" werden als block displayed
+  allTabs[tab].style.display = "grid"; //alle divs "tabs" werden als grid displayed
   if (tab === 0) { //wenn wir uns beim allerersten Tab (siehe var currentTab) befinden ...
     document.getElementById("prevBtn").style.opacity = "0"; // ... wird der "Zurück"-Button nicht gezeigt
     const prevBtn = document.getElementById("prevBtn")
@@ -21,7 +21,7 @@ function showTab(tab) {
   } else { //bei allen weiteren Tabs ...
     document.getElementById("prevBtn").style.opacity = "1"; // ... wird der Zurück-Button als inline displayed
     prevBtn.removeAttribute('disabled')
-    prevBtn.style.cursor = "pointer"
+    prevBtn.style.cursor = "pointer" // ... wird der Zurück-Button als inline displayed
   }
   if (tab === (allTabs.length - 1)) { //wenn wir uns beim letzten Tab befinden ...
     document.getElementById("nextBtn").innerHTML = "Fertig"; // ... steht im "Weiter"-Button "Fertig"
@@ -49,7 +49,6 @@ function nextPrev(nextTab) {
       if (document.querySelectorAll('[type=radio][name=target]:checked')[0].dataset.value === '1' && s.dataset.size === '2') { //wenn bei der 1, Auswahl (siehe const validateDefinition) die data-value === 1 UND bei den data-size === 2 ...
         s.setAttribute('disabled','') // ... setze "disabled" Attribut für jedes Element, das die Bedinung erfüllt
       }
-      //Hintergrundfarbe ändern???
     })
   }
 
@@ -57,7 +56,7 @@ function nextPrev(nextTab) {
     const allergies2 = document.querySelectorAll('[data-size]');
     allergies2.forEach(a=>{
       a.removeAttribute('disabled')
-      if (document.querySelectorAll('[type=checkbox][name=allergy]:checked')[0].dataset.value === '1' && a.dataset.size === 'latex') {
+      if (document.querySelectorAll('[type=checkbox][name=allergy]:checked')[0]?.dataset.value === '1' && a.dataset.size === 'latex') {
         a.setAttribute('disabled', '')
       }
     })
@@ -85,6 +84,9 @@ function validateForm() {
         valid = false
       }
     }
+  }
+  if (validateDefinition[currentTab] === 'any') {
+    valid = true
   }
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
@@ -140,10 +142,7 @@ async function formSubmit() {
   document.querySelector('#placeholder').remove()
   
 if(json.length === 0) {
- //let c = document.createElement('p')
- //c.innerText = "sorry nix gefunden! loser"
- //document.body.appendChild(c)
- window.open("https://www.google.de", "_self") //hier die 404-Seite verlinken
+ document.getElementById('noResults').style.display = "block";
 } else {
   document.getElementById("results").style.display = "grid";
   json.forEach(e=>{
@@ -163,7 +162,6 @@ if(json.length === 0) {
     document.body.insertBefore(ausgabe, ausgabeID)
     ausgabe.innerHTML = `<p class="mattressTitle">${e.name}</p><br><img class="resultImage" src="${e.picture}"><br><p>ab ${price}</p><br><button class="resultButton"><a target="_blank" href="${e.url}">zur Matratze ></a></button>`
     document.querySelector('#results').appendChild(ausgabe)
-    document.getElementById("reloadBtn").style.display = "block"
   })
 }
 }

@@ -11,7 +11,8 @@
     <div id="placeholder">
       <form id="formIndex" action="">
           
-
+        <!-- Design an Handy und Tablet anpassen! 
+                Beschwerden wieder anpassen! wie bei Allergien -->
       <div class="tab tabGridTarget">
         <div class="title">
           <h1>Zielgruppe:</h1>
@@ -19,7 +20,6 @@
             <label>
                 <img class="images" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg">
                 <input class="radio" type="radio" name="target" data-value="1" oninput="this.className = ''">
-                
             </label>  
             <label>
                 <img class="images" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg">
@@ -197,7 +197,7 @@
                 <div class="options complaintsOptions">
                   <p>Schultern/Nacken</p> 
                 </div>
-                <input type="checkbox" name="complaints" data-value="2" oninput="this.className = ''">
+                <input type="radio" name="complaints" data-value="2" oninput="this.className = ''">
             </label>
             <label>
                 <div class="options complaintsOptions">
@@ -235,7 +235,11 @@
       <div class="title">
         <h1>Ergebnisse</h1>
       </div>
-      <button type="button" id="reloadBtn" onClick="window.location.reload();">Neuladen</button>
+      <button type="button" id="reloadBtn" onclick="window.location.reload()">Neu laden</button>
+    </div>
+    <div id="noResults" style="display: none;">
+      <p>Leider nichts gefunden!</p>
+      <button onclick="window.location.reload()">Neu laden</button>
     </div>
  </body>
 </html>

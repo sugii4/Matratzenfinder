@@ -40,7 +40,7 @@ input {
 
 
 button {
-    background-color: #49a6fd;
+    background-color: #074890;
     color: #ffffff;
     border: none;
     border-radius: 6%;
@@ -70,7 +70,7 @@ button:hover {
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbbbbb;
+    background-color: #9fb8d4;
     border: none;
     border-radius: 50%;
     display: inline-block;
@@ -82,7 +82,7 @@ button:hover {
 }
 
 .step.finish {
-    background-color: #4f9ae0;
+    background-color: #074890;
 }
 
 #steps {
@@ -114,6 +114,7 @@ button:hover {
 .mattressTitle {
     font-size: 16px;
     font-weight: bold;
+    word-break: break-all;
 }
 
 #reloadBtn {
@@ -172,17 +173,21 @@ a {
 }
 
 div:has(+input[disabled]) {
-    background-color: #a9d5ffcc;
+    background-color: #84afdd;
     cursor: default;
 }
 
+div:has(+input[disabled]):hover {
+    opacity: 1;
+}
+
 div:has(+input:checked) {
-    background-color: #1d85e7cc;
+    opacity: 0.5;
     color: white;
 }
 
 img:has(+input:checked) {
-    opacity: 0.2;
+    opacity: 0.8;
 }
 
 img {
@@ -193,10 +198,17 @@ img {
     width: 60%;
     height: 10%;
     cursor: pointer;
-    background-color:#63b2fccc;
+    background-color:#1d66b4;
+    border-color: #1d66b4;
+    color: white;
     box-shadow: rgba(105, 105, 105, 0.651) 0px 2px 8px 0px;
+    border-radius: 5%;
     display: inline-block;
     text-align: center;
+}
+
+.options:hover {
+    opacity: 0.9;
 }
 
 .hardnessOptions {

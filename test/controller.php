@@ -25,10 +25,15 @@ INNER JOIN haertegrade_mattress hg ON m.ma_id=hg.ma_id
 INNER JOIN size_mattress sm ON m.ma_id=sm.ma_id
 INNER JOIN allergy_mattress am ON am.ma_id=m.ma_id
 INNER JOIN complaints_mattress cm ON cm.ma_id=m.ma_id
-WHERE group_fk = {$target} AND hg.h_id = '{$hardness}' AND sm.s_id = {$size} AND m.material_fk = {$material} AND cm.c_id = {$complaints} {$selectAllergy}
+WHERE group_fk = {$target}
+    AND hg.h_id = '{$hardness}'
+    AND sm.s_id = {$size}
+    AND m.material_fk = {$material}
+    AND cm.c_id = {$complaints}
+    {$selectAllergy}
 ORDER BY RAND()
 LIMIT 4;
 SQL;
 
-$b = $a->query($sql)->fetch_all(MYSQLI_ASSOC); //assoziatives Array
-echo json_encode($b); //Array als json "umgebaut"
+$b = $a->query($sql)->fetch_all(MYSQLI_ASSOC);
+echo json_encode($b);

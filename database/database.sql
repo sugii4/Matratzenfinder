@@ -2,12 +2,10 @@ CREATE TABLE mattress (
     `ma_id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     `mattress` VARCHAR(255) NOT NULL,
     `price` INT (11) NOT NULL,
-    `group_fk` INT(11) FOREIGN KEY REFERENCES `group`(g_id),
-    `data_fk` INT FOREIGN KEY REFERENCES `pData`(d_id),
-    `material_fk` INT FOREIGN KEY REFERENCES `material`(m_id),
-    `allergy_fk` INT FOREIGN KEY REFERENCES `allergy`(a_id),
-    `size_fk` INT FOREIGN KEY REFERENCES `size`(s_id),
-    `complaints_fk` INT FOREIGN KEY REFERENCES `complaints`(c_id)
+    `group_fk` INT(11) NOT NULL,
+    `material_fk` INT(11) NOT NULL,
+    `url` VARCHAR(255) NOT NULL,
+    `picture` VARCHAR(255) NOT NULL
 )
 
 CREATE TABLE `allergy` (

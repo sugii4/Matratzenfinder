@@ -1,5 +1,5 @@
-var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
+var currentTab = 0;
+showTab(currentTab);
 
 const validateDefinition = {
   0: 'min1',
@@ -11,43 +11,38 @@ const validateDefinition = {
 }
 
 function showTab(tab) {
-  var allTabs = document.getElementsByClassName("tab"); //enthält alle divs die zur Klasse "tab" gehören
-  allTabs[tab].style.display = "grid"; //alle divs "tabs" werden als grid displayed
-  if (tab === 0) { //wenn wir uns beim allerersten Tab (siehe var currentTab) befinden ...
-    document.getElementById("prevBtn").style.opacity = "0"; // ... wird der "Zurück"-Button nicht gezeigt
+  var allTabs = document.getElementsByClassName("tab");
+  allTabs[tab].style.display = "grid";
+  if (tab === 0) { 
+    document.getElementById("prevBtn").style.opacity = "0";
     const prevBtn = document.getElementById("prevBtn")
     prevBtn.setAttribute('disabled', '')
     prevBtn.style.cursor = "default"
-  } else { //bei allen weiteren Tabs ...
-    document.getElementById("prevBtn").style.opacity = "1"; // ... wird der Zurück-Button als inline displayed
+  } else {
+    document.getElementById("prevBtn").style.opacity = "1";
     prevBtn.removeAttribute('disabled')
-    prevBtn.style.cursor = "pointer" // ... wird der Zurück-Button als inline displayed
+    prevBtn.style.cursor = "pointer"
   }
-  if (tab === (allTabs.length - 1)) { //wenn wir uns beim letzten Tab befinden ...
-    document.getElementById("nextBtn").innerHTML = "Fertig"; // ... steht im "Weiter"-Button "Fertig"
-  } else { // bei allen davor ...
-    document.getElementById("nextBtn").innerHTML = "Weiter"; // ... steht im Weiter-Button "Weiter"
+  if (tab === (allTabs.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Fertig";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Weiter";
   }
-  //... and run a function that will display the correct step indicator:
   fixStepIndicator(tab)
 }
 
 function nextPrev(nextTab) {
-  // This function will figure out which tab to display
   var allTabs = document.getElementsByClassName("tab");
-  // Exit the function if any field in the current tab is invalid:
   if (nextTab === 1 && !validateForm()) return false;
-  // Hide the current tab:
   allTabs[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
   currentTab = currentTab + nextTab;
 
-  if (currentTab === 2) { // wenn Tab 2 aktiv ist
-    const sizes = document.querySelectorAll('[data-size]'); //Variable die alle html-Elemente mit "data-size" enthalten enthält
-    sizes.forEach(s=>{ //für jedes dieser data-size Elemente ...
-      s.removeAttribute('disabled') //... entferne "disabled" Attribut
-      if (document.querySelectorAll('[type=radio][name=target]:checked')[0].dataset.value === '1' && s.dataset.size === '2') { //wenn bei der 1, Auswahl (siehe const validateDefinition) die data-value === 1 UND bei den data-size === 2 ...
-        s.setAttribute('disabled','') // ... setze "disabled" Attribut für jedes Element, das die Bedinung erfüllt
+  if (currentTab === 2) {
+    const sizes = document.querySelectorAll('[data-size]');
+    sizes.forEach(s=>{
+      s.removeAttribute('disabled')
+      if (document.querySelectorAll('[type=radio][name=target]:checked')[0].dataset.value === '1' && s.dataset.size === '2') {
+        s.setAttribute('disabled','')
       }
     })
   }
@@ -62,25 +57,20 @@ function nextPrev(nextTab) {
     })
   }
 
-  // if you have reached the end of the form...
   if (currentTab >= allTabs.length) {
-    // ... the form gets submitted:
     formSubmit()
     return false;
   }
-  // Otherwise, display the correct tab:
   showTab(currentTab);
 }
 
 function validateForm() {
-  // This function deals with validation of the form fields
-  var allTabs, tabInputs, i, valid = true;
+  var allTabs, tabInputs, counter, valid = true;
   allTabs = document.getElementsByClassName("tab");
   tabInputs = allTabs[currentTab].getElementsByTagName('input');
-  // A loop that checks every input field in the current tab:
-  for (i = 0, l=tabInputs.length; i<l; i++) {
-    if (validateDefinition[currentTab] === 'min1') { //wenn der aktuelle Tab min1 entspricht ...
-      if(!checkRadio(document.getElementsByClassName("tab")[currentTab].querySelectorAll('[type=radio]'))){ // ???
+  for (counter = 0, inputs = tabInputs.length; counter < inputs; counter++) {
+    if (validateDefinition[currentTab] === 'min1') {
+      if(!checkRadio(document.getElementsByClassName("tab")[currentTab].querySelectorAll('[type=radio]'))){
         valid = false
       }
     }
@@ -88,26 +78,23 @@ function validateForm() {
   if (validateDefinition[currentTab] === 'any') {
     valid = true
   }
-  // If the valid status is true, mark the step as finished and valid:
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
-  return valid; // return the valid status
+  return valid;
 }
 
 function fixStepIndicator(n) {
-  // This function removes the "active" class of all steps...
-  var i, x = document.getElementsByClassName("step");
-  for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" active", "");
+  var counter, steps = document.getElementsByClassName("step");
+  for (counter = 0; counter < steps.length; counter++) {
+    steps[counter].className = steps[counter].className.replace(" active", "");
   }
-  //... and adds the "active" class on the current step:
-  x[n].className += " active";
+  steps[n].className += " active";
 }
 
 function checkRadio(radios) {
-  for (var i = 0, len = radios.length; i < len; i++) {
-       if (radios[i].checked) {
+  for (var counter = 0, len = radios.length; counter < len; counter++) {
+       if (radios[counter].checked) {
            return true;
        }
   }

@@ -7,7 +7,7 @@ const validateDefinition = {
   2: 'min1',
   3: 'any',
   4: 'min1',
-  5: 'min1'
+  5: 'any'
 }
 
 function showTab(tab) {
@@ -107,7 +107,6 @@ async function formSubmit() {
   formdata.set('hardness', document.querySelectorAll('[type=radio][name=hardness]:checked')[0].dataset.value)
   formdata.set('size', document.querySelectorAll('[type=radio][name=size]:checked')[0].dataset.value)
   formdata.set('material', document.querySelectorAll('[type=radio][name=material]:checked')[0].dataset.value)
-  formdata.set('complaints', document.querySelectorAll('[type=radio][name=target]:checked')[0].dataset.value)
 
   const allergies = document.querySelectorAll('[type=checkbox][name=allergy]:checked')
   if (allergies.length === 0) {
@@ -115,6 +114,15 @@ async function formSubmit() {
   } else {
     allergies.forEach(a=>{
       formdata.append('allergy[]', a.dataset.value)
+    })
+  }
+
+  const complaints = document.querySelectorAll('[type=checkbox][name=complaints]:checked')
+  if (complaints.length === 0) {
+    formdata.append('complaints[]', '')
+  } else {
+    complaints.forEach(c=>{
+      formdata.append('complaints[]', c.dataset.value)
     })
   }
 

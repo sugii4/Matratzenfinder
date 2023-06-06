@@ -15,7 +15,7 @@
                 Beschwerden wieder anpassen! wie bei Allergien -->
       <div class="tab tabGridTarget">
         <div class="title">
-          <h1>Zielgruppe:</h1>
+          <h1>Für wen ist die Matratze?</h1>
         </div>
             <label>
                 <img class="images" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg">
@@ -29,29 +29,29 @@
 
         <div class="tab tabGridHardness">
           <div class="title">
-            <h1>Härtegrad:</h1>
+            <h1>Wie hart soll die Matratze sein?</h1>
           </div>
             <label>
                 <div class="options hardnessOptions">
-                  <p>H1</p> 
+                  <p>H1 (bis 60kg)</p> 
                 </div>
                <input type="radio" name="hardness" data-value="H1" oninput="this.className = ''">
             </label>
             <label>
                 <div class="options hardnessOptions">
-                  <p>H2</p> 
+                  <p>H2 (60kg-80kg)</p> 
                 </div>
                 <input type="radio" name="hardness" data-value="H2" oninput="this.className = ''">
             </label>
             <label>
                 <div class="options hardnessOptions">
-                  <p>H3</p> 
+                  <p>H3 (80kg-120kg)</p> 
                 </div>
                 <input type="radio" name="hardness" data-value="H3" oninput="this.className = ''">
             </label>
             <label>
                 <div class="options hardnessOptions">
-                  <p>H4</p> 
+                  <p>H4 (ab 120kg)</p> 
                 </div>
                 <input type="radio" name="hardness" data-value="H4" oninput="this.className = ''">
             </label>
@@ -59,7 +59,7 @@
 
         <div class="tab tabGridSizes">
           <div class="title">
-            <h1>Matratzengröße:</h1>
+            <h1>Wie groß soll die Matratze sein?</h1>
           </div>
             <label>
                 <div class="options sizeOptions">
@@ -125,7 +125,7 @@
 
         <div class="tab tabGridAllergies">
           <div class="title">
-            <h1>Allergie:</h1>
+            <h1>Haben Sie Allergien?</h1>
           </div>
             <label>
                 <div class="options allergyOptions">
@@ -149,7 +149,7 @@
 
         <div class="tab tabGridMaterial">
           <div class="title">
-            <h1>Material:</h1>
+            <h1>Welches Material bevorzugen Sie?</h1>
           </div>
             <label>
                 <div class="options materialOptions">
@@ -191,31 +191,31 @@
 
         <div class="tab tabGridHardness">
           <div class="title">
-            <h1>Beschwerden:</h1>
+            <h1>Welche Beschwerden haben Sie?</h1>
           </div>
             <label>
                 <div class="options complaintsOptions">
                   <p>Schultern/Nacken</p> 
                 </div>
-                <input type="radio" name="complaints" data-value="2" oninput="this.className = ''">
+                <input type="checkbox" name="complaints" data-value="2" oninput="this.className = ''">
             </label>
             <label>
                 <div class="options complaintsOptions">
                   <p>Hüfte</p> 
                 </div>
-                <input type="radio" name="complaints" data-value="3" oninput="this.className = ''">
+                <input type="checkbox" name="complaints" data-value="3" oninput="this.className = ''">
             </label>
             <label>
                 <div class="options complaintsOptions">
                   <p>Rücken</p> 
                 </div>
-                <input type="radio" name="complaints" data-value="1" oninput="this.className = ''">
+                <input type="checkbox" name="complaints" data-value="1" oninput="this.className = ''">
             </label>
             <label>
               <div class="options complaintsOptions">
                 <p>Keine</p> 
               </div>
-              <input type="radio" name="complaints" data-value="4" oninput="this.className = ''">
+              <input type="checkbox" name="complaints" data-value="4" oninput="this.className = ''">
           </label>
         </div>
 
@@ -233,12 +233,12 @@
     </div>
     <div id="results">
       <div class="title">
-        <h1>Ergebnisse</h1>
+        <h1>Diese Produkte könnten Ihnen gefallen:</h1>
       </div>
       <button type="button" id="reloadBtn" onclick="window.location.reload()">Neu laden</button>
     </div>
     <div id="noResults" style="display: none;">
-      <p>Leider nichts gefunden!</p>
+      <p>Leider keine Produkte gefunden!</p>
       <button onclick="window.location.reload()">Neu laden</button>
     </div>
  </body>

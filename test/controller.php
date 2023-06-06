@@ -13,9 +13,14 @@ $complaints  = $_POST['complaints'];
 $a = mysqli_connect('localhost', 'root', '', 'matratzenfinder');
 
 $selectAllergy = '';
+$selectComplaints = '';
 
 if (!(count($allergy) === 1 && $allergy[0] === '')) {
     $selectAllergy = 'AND am.a_id in('.implode(',', $allergy).')';
+}
+
+if (!(count($complaints) === 1 && $complaints[0] === '')) {
+    $selectComplaints = 'AND cm.c_id in('.implode(',', $complaints).')';
 }
 
 $sql = <<<SQL
@@ -29,7 +34,7 @@ WHERE group_fk = {$target}
     AND hg.h_id = '{$hardness}'
     AND sm.s_id = {$size}
     AND m.material_fk = {$material}
-    AND cm.c_id = {$complaints}
+    {$selectComplaints}
     {$selectAllergy}
 ORDER BY RAND()
 LIMIT 4;

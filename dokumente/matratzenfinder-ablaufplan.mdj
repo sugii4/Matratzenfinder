@@ -649,18 +649,18 @@
 										"$ref": "AAAAAAGEnvfuI0V/TmE="
 									},
 									"font": "Arial;13;0",
-									"left": 248.25,
+									"left": 253.778564453125,
 									"top": 572.25,
-									"width": 112.5,
+									"width": 123.55712890625,
 									"height": 56.5,
-									"text": "Antwortmöglichkeit ausgewählt?",
+									"text": "Eine oder mehrere Antwortmöglichkeiten ausgewählt?",
 									"wordWrap": true
 								}
 							],
 							"font": "Arial;13;0",
 							"left": 192,
 							"top": 544,
-							"width": 225,
+							"width": 247.1142578125,
 							"height": 113,
 							"nameLabel": {
 								"$ref": "AAAAAAGEnvfuI0WAQAU="
@@ -964,7 +964,7 @@
 									"top": 572.25,
 									"width": 123.55712890625,
 									"height": 56.5,
-									"text": "Eine oder mehrere Antwortmöglichkeiten ausgewählt?",
+									"text": "Antwortmöglichkeit ausgewählt?",
 									"wordWrap": true
 								}
 							],
@@ -1606,7 +1606,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGEntbDoUPDrDU="
 					},
-					"name": "Antwortmöglichkeit ausgewählt?"
+					"name": "Eine oder mehrere Antwortmöglichkeiten ausgewählt?"
 				},
 				{
 					"_type": "FCProcess",
@@ -1668,7 +1668,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGEntbDoUPDrDU="
 					},
-					"name": "Eine oder mehrere Antwortmöglichkeiten ausgewählt?"
+					"name": "Antwortmöglichkeit ausgewählt?"
 				},
 				{
 					"_type": "FCProcess",

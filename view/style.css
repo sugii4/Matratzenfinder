@@ -114,7 +114,6 @@ button:hover {
 .mattressTitle {
     font-size: 16px;
     font-weight: bold;
-    word-break: break-all;
 }
 
 #reloadBtn {
@@ -268,4 +267,25 @@ img {
     grid-template-rows: repeat(3, 33%);
     grid-template-columns: repeat(3, 33%);
     grid-template-areas: "title title title";
+}
+
+#noResults {
+    display: none;
+    box-shadow: rgba(105, 105, 105, 0.651) 0px 2px 8px 0px;
+    margin: 5% auto;
+    padding: 1%;
+    max-width: 60%;
+    min-width: 50%;
+    border-radius: 1%;
+    height: 80%;
+}
+
+#noResults p {
+    font-size:xx-large;
+    text-align: center;
+    margin-top: 25%;
+}
+
+#noResults button {
+    margin-left: 45%;
 }

@@ -23,6 +23,7 @@ html, body {
     height: 80%;
     display: grid;
     grid-template-rows: 6fr 1fr;
+    
 }
 
 h1 {
